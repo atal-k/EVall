@@ -11,6 +11,9 @@
 # production
 /build
 
+hello.txt
+All.js
+
 # misc
 .DS_Store
 .env.local
