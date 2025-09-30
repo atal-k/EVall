@@ -10,9 +10,9 @@ const Hero = () => {
           loop 
           muted 
           playsInline
-          poster="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1920&h=1080&fit=crop"
+          poster=""
         >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-truck-driving-on-a-highway-4613-large.mp4" type="video/mp4" />
+          <source src="/video/promo.mp4" type="video/mp4" />
         </video>
         <div className="hero__overlay"></div>
         
@@ -25,9 +25,9 @@ const Hero = () => {
           </p>
           
           <div className="hero__cta">
-            <Button variant="primary">
-              <span>🚗</span>
-              Test Drive
+            <Button variant="primary" className="cta">
+              <span className="cta_icon" aria-hidden="true"><img src="./icons/handle.svg" alt="handle icon" /></span>
+              <span className="cta__label">Test Drive</span>
             </Button>
           </div>
           

@@ -2,10 +2,9 @@
 // 📁 src/pages/Home.js
 // ============================================
 import React from 'react';
-import Header from '../components/layout/Header'
 import Hero from '../components/sections/Hero';
 import Testimonials from '../components/sections/Testimonials'
-import Footer from '../components/layout/Footer'
+import Models from '../components/sections/Models';
 
 const Home = () => {
 
@@ -14,6 +13,7 @@ const Home = () => {
           <div className="app">
             <main>
               <Hero />
+              <Models/>
               <Testimonials />
             </main>
           </div>
