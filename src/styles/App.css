@@ -24,7 +24,7 @@
     --font-Poppins: "Poppins", sans-serif;
     --font-Inter: "Inter", sans-serif;
     --font-size-xs: 0.75rem;
-    --font-size-sm: 0.875rem;
+    --font-size-sm: 0.9rem;
     --font-size-base: 1rem;
     --font-size-lg: 1.125rem;
     --font-size-xl: 1.25rem;
@@ -34,6 +34,7 @@
     --font-size-5xl: 3.5rem;
     
     /* Spacing */
+    --spacing-xxs: 0.25rem
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;

@@ -47,7 +47,7 @@ export const vansData = [
     price: 420000,
     currency: "₹",
     isFeatured: false,
-    isWishlisted: false
+    isBookmarked: true
   },
   {
     id: 3,

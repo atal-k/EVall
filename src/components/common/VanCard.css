@@ -12,7 +12,7 @@
 }
 
 .van-card:hover {
-  transform: translateY(-8px);
+  /* transform: translateY(-8px); */
   box-shadow: var(--shadow-xl);
 }
 
@@ -44,17 +44,18 @@
   position: absolute;
   top: var(--spacing-md);
   left: var(--spacing-md);
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 1rem;
   border-radius: var(--radius-full);
-  font-size: var(--font-size-sm);
-  font-weight: 600;
+  font-size: var(--font-size-xs);
+  font-weight: 400;
+  letter-spacing: 0.1rem;
   color: var(--color-white);
   z-index: 2;
   box-shadow: var(--shadow-md);
 }
 
 .van-card__badge--green {
-  background: var(--color-primary-dark);
+  background: var(--color-dark-green);
 }
 
 .van-card__badge--red {
@@ -65,13 +66,13 @@
   background: var(--color-secondary);
 }
 
-/* Wishlist Button */
-.van-card__wishlist {
+/* Bookmark Button */
+.van-card__bookmark {
   position: absolute;
   top: var(--spacing-md);
   right: var(--spacing-md);
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   background: var(--color-white);
   border-radius: 50%;
   display: flex;
@@ -81,23 +82,20 @@
   transition: all var(--transition-base);
   z-index: 2;
   box-shadow: var(--shadow-md);
-  color: var(--color-gray-600);
 }
 
-.van-card__wishlist:hover {
-  transform: scale(1.1);
+.van-card__bookmark:hover {
+  /* transform: scale(1.1); */
   box-shadow: var(--shadow-lg);
-  color: #dc2626;
 }
 
-.van-card__wishlist--active {
-  color: #dc2626;
-  background: #fee2e2;
+.van-card__bookmark--active {
+  background: var(--color-white);
 }
 
 /* Content */
 .van-card__content {
-  padding: var(--spacing-lg);
+  padding: var(--spacing-sm);
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -113,48 +111,67 @@
 
 .van-card__tagline {
   font-size: var(--font-size-sm);
-  color: var(--color-gray-600);
-  margin-bottom: var(--spacing-lg);
+  color: var(--color-gray-800);
+  margin-bottom: var(--spacing-xs);
   line-height: 1.5;
+  overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
 }
 
 /* Specs Grid */
 .van-card__specs {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
-  padding-bottom: var(--spacing-lg);
-  border-bottom: 1px solid var(--color-gray-200);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xxs);
+  margin-bottom: var(--spacing-md);
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  border-top: 1px solid var(--color-gray-300);
+  border-bottom: 1px solid var(--color-gray-300);
 }
 
 .van-card__spec {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: var(--spacing-sm);
+  text-align: center;
+  gap: var(--spacing-xs);
 }
 
 .van-card__spec-icon {
-  color: var(--color-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  margin-bottom: 4px;
+}
+
+.van-card__spec-icon img {
+  display: block;
 }
 
 .van-card__spec-details {
-  flex: 1;
-  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .van-card__spec-value {
-  font-size: var(--font-size-base);
-  font-weight: 700;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
   color: var(--color-dark);
   line-height: 1.2;
 }
 
 .van-card__spec-label {
-  font-size: var(--font-size-xs);
-  color: var(--color-gray-600);
+  font-size: 11.5px;
+  color: var(--color-gray-700);
   line-height: 1.2;
+  font-weight: 400;
 }
 
 /* Footer */
@@ -187,7 +204,7 @@
 
 .van-card__cta {
   padding: 0.5rem 1rem;
-  background: var(--color-primary-dark);
+  background: var(--color-dark-green);
   color: var(--color-white);
   font-family: "DM Sans", sans-serif;
   font-size: var(--font-size-sm);
@@ -198,13 +215,28 @@
 }
 
 .van-card__cta:hover {
-  background: var(--color-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  background: var(--color-primary-dark);
+  /* transform: translateY(-2px); */
+  box-shadow: var(--shadow-sm);
 }
 
 /* Responsive */
 @media (max-width: 767px) {
+  .van-card__specs {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .van-card__spec {
+    flex-direction: row;
+    text-align: left;
+    justify-content: flex-start;
+  }
+  
+  .van-card__spec-details {
+    align-items: flex-start;
+  }
+  
   .van-card__footer {
     flex-direction: column;
     align-items: stretch;

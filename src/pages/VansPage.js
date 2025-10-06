@@ -10,7 +10,7 @@ import './VansPage.css';
 const VansPage = () => {
   const [filters, setFilters] = useState({
     categories: ['light-duty'],
-    priceRange: [200000, 2050000],
+    priceRange: [200000, 1200000],
     ranges: [],
     payloads: [],
     chargingTypes: []
