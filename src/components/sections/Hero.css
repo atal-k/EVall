@@ -96,13 +96,22 @@
   .hero__specs {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-xl);
+    gap: 0;
   }
   
   .hero__spec {
     display: flex;
     flex-direction: column;
+    padding: 0 var(--spacing-md);
   }
+  .hero__spec:first-child {
+    padding-left: 0;
+  }
+  
+  .hero__spec:nth-child(-n+2) {
+    border-right: 1.5px solid var(--color-white);
+  }
+  
   
   .hero__spec-value {
     font-size: var(--font-size-3xl);
