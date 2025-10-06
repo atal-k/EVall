@@ -1,0 +1,59 @@
+/* // FILE: src/components/common/Checkbox.css
+// ============================================================================ */
+
+.checkbox {
+  margin-bottom: var(--spacing-sm);
+}
+
+.checkbox__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox__label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  user-select: none;
+  transition: all var(--transition-base);
+}
+
+.checkbox__box {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+}
+
+.checkbox__input:checked + .checkbox__label .checkbox__box {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.checkbox__label:hover .checkbox__box {
+  border-color: var(--color-primary);
+}
+
+.checkbox__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-800);
+  flex: 1;
+}
+
+.checkbox__input:checked + .checkbox__label .checkbox__text {
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+.checkbox__count {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  margin-left: auto;
+}
