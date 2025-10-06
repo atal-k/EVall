@@ -1,0 +1,55 @@
+/* // FILE: src/components/sections/FilterSidebar.css
+// ============================================================================ */
+
+.filter-sidebar {
+  background: var(--color-white);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: calc(var(--header-height) + var(--spacing-md));
+  /* max-height: calc(100vh - var(--header-height) - var(--spacing-lg) * 2); */
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gray-300) transparent;
+}
+
+.filter-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.filter-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.filter-sidebar::-webkit-scrollbar-thumb {
+  background: var(--color-gray-300);
+  border-radius: var(--radius-full);
+}
+
+.filter-sidebar__section {
+  padding: var(--spacing-sm) 0;
+}
+
+.filter-sidebar__section:first-child {
+  padding-top: 0;
+}
+
+.filter-sidebar__section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.filter-sidebar__title {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.filter-sidebar__options {
+  display: flex;
+  flex-direction: column;
+}
