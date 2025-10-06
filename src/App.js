@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
+import VansPage from './pages/VansPage';
 import './styles/App.css';
 import './styles/utils.css'
 
@@ -17,6 +18,7 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/vans" element={<VansPage />} />
           </Routes>
         </main>
         <Footer />
