@@ -2,7 +2,8 @@
 // Header Component
 import { useState } from "react";
 import Button from '../common/Button';
-import './Header.css'
+import './Header.css';
+import Logo from "../common/Logo";
 
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,10 +20,9 @@ const Header = () => {
     return (
       <header className="header">
         <div className="header__container">
-          <a href="#" className="header__logo">
-            <div className="header__logo-icon">E</div>
-            <span>EVall</span>
-          </a>
+        <a href="/" className="header__logo-link">
+        <Logo size="medium"/>
+      </a>
           
           <nav className="header__nav">
             {navLinks.map((link, index) => (

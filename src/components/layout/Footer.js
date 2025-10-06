@@ -2,6 +2,7 @@
 // Footer Component
 import { useState } from "react";
 import './Footer.css'
+import Logo from "../common/Logo";
 const Footer = () => {
     const [email, setEmail] = useState('');
     
@@ -16,10 +17,9 @@ const Footer = () => {
         <div className="container">
           <div className="footer__main">
             <div className="footer__brand">
-              <div className="footer__logo">
-                <div className="footer__logo-icon">E</div>
-                <span>EVall</span>
-              </div>
+            <div className="footer__logo">
+              <Logo size="large" className="logo--light" />
+            </div>
               <p className="footer__tagline">
                 Leading the electric revolution with innovative, sustainable, and high-performance 
                 electric vehicles designed for the future.
