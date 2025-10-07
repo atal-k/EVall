@@ -119,7 +119,7 @@
   }
   
   .footer__newsletter-btn:hover {
-    background: var(--color-primary-dark);
+    background: var(--color-dark-green2);
   }
   
   .footer__newsletter-btn svg {
