@@ -1,0 +1,285 @@
+/* // FILE: src/components/common/TestDriveModal.css
+// ============================================================================ */
+
+.test-drive-modal {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xs);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.test-drive-modal__backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.test-drive-modal__container {
+  position: relative;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Header */
+.test-drive-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--color-gray-200);
+  gap: var(--spacing-md);
+}
+
+.test-drive-modal__title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-xxs);
+}
+
+.test-drive-modal__subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  line-height: 1.5;
+}
+
+.test-drive-modal__close {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-gray-100);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-700);
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+}
+
+.test-drive-modal__close:hover {
+  background: var(--color-gray-200);
+  color: var(--color-dark);
+}
+
+/* Form */
+.test-drive-modal__form {
+  padding: var(--spacing-sm);
+}
+
+.test-drive-modal__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  /* margin-bottom: var(--spacing-sm); */
+}
+
+.test-drive-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+}
+
+.test-drive-modal__input,
+.test-drive-modal__select {
+  width: 100%;
+  padding: 0.75rem var(--spacing-md);
+  font-size: var(--font-size-base);
+  color: var(--color-dark);
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  font-family: var(--font-primary);
+}
+
+.test-drive-modal__input::placeholder {
+  color: var(--color-gray-500);
+}
+
+.test-drive-modal__input:focus,
+.test-drive-modal__select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 179, 0, 0.1);
+}
+
+.test-drive-modal__input--error {
+  border-color: #dc2626;
+}
+
+.test-drive-modal__input--error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.test-drive-modal__select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.test-drive-modal__select:disabled {
+  background-color: var(--color-gray-100);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.test-drive-modal__error {
+  font-size: var(--font-size-xs);
+  color: #dc2626;
+  margin-top: 0.25rem;
+}
+
+/* Submit Button */
+.test-drive-modal__submit {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.test-drive-modal__submit:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.test-drive-modal__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.test-drive-modal__spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: var(--color-white);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Privacy Text */
+.test-drive-modal__privacy {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-600);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.test-drive-modal__privacy a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  transition: color var(--transition-base);
+}
+
+.test-drive-modal__privacy a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* Scrollbar */
+.test-drive-modal__container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.test-drive-modal__container::-webkit-scrollbar-track {
+  background: var(--color-gray-100);
+  border-radius: var(--radius-xl);
+}
+
+.test-drive-modal__container::-webkit-scrollbar-thumb {
+  background: var(--color-gray-400);
+  border-radius: var(--radius-full);
+}
+
+.test-drive-modal__container::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-500);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .test-drive-modal {
+    padding: var(--spacing-md);
+  }
+
+  .test-drive-modal__container {
+    max-height: 95vh;
+  }
+
+  .test-drive-modal__header {
+    padding: var(--spacing-md);
+  }
+
+  .test-drive-modal__title {
+    font-size: var(--font-size-xl);
+  }
+
+  .test-drive-modal__form {
+    padding: var(--spacing-md);
+  }
+
+  .test-drive-modal__row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
