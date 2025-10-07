@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import VansPage from './pages/VansPage';
 import './styles/App.css';
 import './styles/utils.css'
+import VanDetail from './pages/VanDetail';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/vans" element={<VansPage />} />
+            <Route path="/vans/:id" element={<VanDetail />} />
           </Routes>
         </main>
         <Footer />

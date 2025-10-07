@@ -16,6 +16,7 @@
     --color-gray-800: #333333;
     --color-gray-900: #222222;
     --color-white: #ffffff;
+    --color-black: #000000;
     
     /* Typography */
     --font-primary: "DM Sans", sans-serif;
@@ -34,7 +35,7 @@
     --font-size-5xl: 3.5rem;
     
     /* Spacing */
-    --spacing-xxs: 0.25rem
+    --spacing-xxs: 0.25rem;
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
