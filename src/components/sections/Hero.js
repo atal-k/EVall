@@ -1,7 +1,10 @@
 // Hero Component
+import { useState } from 'react';
 import Button from "../common/Button";
 import './Hero.css'
+import TestDriveModal from '../common/TestDriveModel';
 const Hero = () => {
+  const [showTestDrive, setShowTestDrive] = useState(false);
     return (
       <section className="hero">
         <video 
@@ -25,12 +28,15 @@ const Hero = () => {
           </p>
           
           <div className="hero__cta">
-            <Button variant="primary" className="cta">
+            <Button variant="primary" className="cta" onClick={() => setShowTestDrive(true)}>
               <span className="cta_icon" aria-hidden="true"><img src="./icons/handle.svg" alt="handle icon" /></span>
               <span className="cta__label">Test Drive</span>
             </Button>
           </div>
-          
+          <TestDriveModal 
+        isOpen={showTestDrive} 
+        onClose={() => setShowTestDrive(false)} 
+      />
           <div className="hero__specs">
             <div className="hero__spec">
               <div className="hero__spec-value">300<span style={{fontSize: 'var(--font-size-xl)'}}>km</span></div>
