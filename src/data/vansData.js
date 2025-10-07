@@ -300,3 +300,7 @@ export const categories = [
 export const getVanById = (id) => {
   return vansData.find(van => van.id === id) || null;
 };
+export const getProducts = () => vansData.map(van => ({
+  id: van.id,
+  name: van.name
+}));
