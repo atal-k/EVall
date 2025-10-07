@@ -24,7 +24,7 @@ const Models = () => {
     // Navigate to detail page or show modal
   };
 
-  const filteredVans = vans.filter(van => van.category === activeCategory);
+  const filteredVans = vans.filter(van => van.category === activeCategory).slice(0, 4);
 
   return (
     <section className="models-section">

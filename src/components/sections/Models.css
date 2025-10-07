@@ -70,7 +70,7 @@
   
   .models-section__view-all:hover {
     color: #1d4ed8;
-    gap: var(--spacing-sm);
+    /* gap: var(--spacing-sm); */
   }
   
   .models-section__view-all svg {
@@ -78,7 +78,7 @@
   }
   
   .models-section__view-all:hover svg {
-    transform: translateX(4px);
+    transform: translateX(3px);
   }
   
   /* Grid */
