@@ -2,10 +2,12 @@
 // ============================================================================
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './VanCard.css';
 
 const VanCard = ({ van, onBookmarkToggle, onExploreMore }) => {
   const [isBookmarked, setIsBookmarked] = useState(van.isBookmarked || false);
+  const navigate = useNavigate();
 
   const handleBookmarkClick = (e) => {
     e.stopPropagation();
@@ -16,15 +18,13 @@ const VanCard = ({ van, onBookmarkToggle, onExploreMore }) => {
   };
 
   const handleExploreClick = () => {
-    if (onExploreMore) {
-      onExploreMore(van.id);
-    }
+    navigate(`/vans/${van.id}`);
   };
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-IN').format(price);
   };
-  const imageSrc = `/images/${van.image}`;
+  const imageSrc = `/images/${van.images[0]}`;
 
 
   return (
