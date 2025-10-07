@@ -1,0 +1,168 @@
+/* ===== MAIN CONTAINER ===== */
+.image-zoomer-container {
+    position: relative;
+    max-width: 100%;
+    display: inline-block;
+  }
+  
+  /* ===== IMAGE SECTION ===== */
+  .image-zoomer-main {
+    position: relative;
+    display: inline-block;
+    cursor: crosshair;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f9f9f9;
+  }
+  
+  .image-zoomer-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    user-select: none;
+    transition: opacity 0.2s ease;
+  }
+  
+  /* Hover effect for main image */
+  .image-zoomer-main:hover .image-zoomer-image {
+    opacity: 0.8;
+  }
+  
+  /* ===== SELECTOR OVERLAY ===== */
+  .image-zoomer-selector {
+    position: absolute;
+    border: 1px solid #067fff;
+    background: rgba(0, 123, 255, 0.25);
+    pointer-events: none;
+    z-index: 10;
+    transition: all 0.1s ease-out;
+    box-shadow: 
+      0 0 0 2px rgba(255, 255, 255, 0.5),
+      0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* ===== MAGNIFIED VIEW PANEL ===== */
+  .image-zoomer-magnified {
+    position: relative;
+    min-width: 400px;
+    min-height: 400px;
+    border: 2px solid #d0d0d0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* NEW - Overlay Modal Styles */
+
+  /* Side Overlay Positioning */
+.image-zoomer-magnified-overlay {
+    position: absolute;
+    top: 0;
+    left: calc(100% + 20px); /* Position to the right of image */
+    z-index: 1000;
+    pointer-events: none;
+  }
+  
+  .image-zoomer-magnified-overlay .image-zoomer-magnified-content {
+    width: 700px;
+    height: 450px;
+    border-radius: 8px;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background: #fff;
+  }
+
+  
+
+  
+  .image-zoomer-magnified-content {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    transition: background-position 0.1s ease-out;
+  }
+  
+  /* ===== LOADING STATE ===== */
+  .image-zoomer-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    font-size: 14px;
+    color: #666;
+    z-index: 5;
+  }
+  
+  /* ===== RESPONSIVE DESIGN ===== */
+  /* Large screens: 1.1x of source image */
+/* @media (min-width: 1200px) {
+    .image-zoomer-magnified-overlay .image-zoomer-magnified-content {
+      width: calc(110% * var(--source-image-width, 400px));
+      height: calc(110% * var(--source-image-height, 400px));
+    }
+  } */
+  /* Fallback positioning when no space on right */
+@media (max-width: 1200px) {
+    .image-zoomer-magnified-overlay {
+      left: auto;
+      right: calc(100% + 20px); /* Position to the left of image */
+    }
+  }
+  
+  /* Mobile: Position below image */
+  @media (max-width: 768px) {
+    .image-zoomer-magnified-overlay {
+      position: relative;
+      left: auto;
+      right: auto;
+      top: 10px;
+      margin: 0 auto;
+    }
+    
+    .image-zoomer-magnified-overlay .image-zoomer-magnified-content {
+      width: 280px;
+      height: 280px;
+    }
+  }
+
+  
+  @media (max-width: 480px) {
+    .image-zoomer-container {
+      gap: 10px;
+    }
+    
+    .image-zoomer-main {
+      border-width: 1px;
+    }
+    
+    .image-zoomer-magnified {
+      min-height: 250px;
+      border-width: 1px;
+    }
+    
+    .image-zoomer-magnified-content {
+      min-height: 250px;
+    }
+  }
+
+  
+  
+  /* ===== ACCESSIBILITY ===== */
+  .image-zoomer-main:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+  }
+  
+  /* Reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .image-zoomer-selector,
+    .image-zoomer-image,
+    .image-zoomer-magnified-content {
+      transition: none;
+    }
+  }
