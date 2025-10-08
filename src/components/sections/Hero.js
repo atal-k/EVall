@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Button from "../common/Button";
 import './Hero.css'
-import TestDriveModal from '../common/TestDriveModel';
+import TestDriveModal from '../common/TestDriveModal';
 const Hero = () => {
   const [showTestDrive, setShowTestDrive] = useState(false);
     return (
