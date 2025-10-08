@@ -14,7 +14,7 @@
 /* Trigger Button */
 .custom-select__trigger {
   width: 100%;
-  padding: 0.75rem var(--spacing-md);
+  padding: 0.7rem var(--spacing-md);
   font-size: var(--font-size-base);
   font-family: var(--font-primary);
   color: var(--color-dark);
@@ -122,7 +122,7 @@
 
 /* Dropdown Options */
 .custom-select__option {
-  padding: 0.6rem var(--spacing-md);
+  padding: 0.5rem var(--spacing-md);
   font-size: var(--font-size-base);
   font-family: var(--font-primary);
   color: var(--color-dark);
