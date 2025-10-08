@@ -1,23 +1,23 @@
 /* ========== TESTIMONIALS STYLES ========== */
 .testimonials {
-    padding: var(--spacing-3xl) 0;
+    padding: var(--spacing-xl) 0;
     background: var(--color-gray-100);
   }
   
   .testimonials__header {
     text-align: center;
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-xl);
   }
   
   .testimonials__title {
     font-size: var(--font-size-3xl);
     font-weight: 800;
     color: var(--color-dark);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
   }
   
   .testimonials__subtitle {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
     color: var(--color-gray-600);
     max-width: 700px;
     margin: 0 auto;
@@ -31,7 +31,7 @@
   
   .testimonial-card {
     background: var(--color-white);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
     transition: transform var(--transition-base), box-shadow var(--transition-base);
