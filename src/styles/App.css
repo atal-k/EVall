@@ -17,6 +17,17 @@
     --color-gray-900: #222222;
     --color-white: #ffffff;
     --color-black: #000000;
+
+    /* Comparison section */
+    --comparison-purple: #4E09A9;
+    --comparison-green: #2DB700;
+    --comparison-red: #9D0A0A;
+    --comparison-orange: #D37C25;
+    --comparison-card-bg: #ffffff;
+    --comparison-icon-bg-purple: #ede9fe;
+    --comparison-icon-bg-green: #d6fec9;
+    --comparison-icon-bg-red: #fee2e2;
+    --comparison-icon-bg-orange: #ffedd5;
     
     /* Typography */
     --font-primary: "DM Sans", sans-serif;

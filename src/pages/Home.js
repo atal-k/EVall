@@ -5,6 +5,7 @@ import React from 'react';
 import Hero from '../components/sections/Hero';
 import Testimonials from '../components/sections/Testimonials'
 import Models from '../components/sections/Models';
+import Comparison from '../components/sections/Comparison';
 
 const Home = () => {
 
@@ -14,6 +15,7 @@ const Home = () => {
             <main>
               <Hero />
               <Models/>
+              <Comparison/>
               <Testimonials />
             </main>
           </div>
