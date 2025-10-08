@@ -1,0 +1,401 @@
+/* // FILE: src/components/sections/Comparison.css
+// ============================================================================ */
+
+.comparison-section {
+  padding: var(--spacing-xl) 0;
+  background: var(--color-gray-100);
+}
+
+/* Header */
+.comparison-section__header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto var(--spacing-lg);
+}
+
+.comparison-section__title {
+  font-size: var(--font-size-4xl);
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+}
+
+.comparison-section__subtitle {
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-800);
+  line-height: 1.6;
+}
+
+/* Toggle */
+.comparison-section__toggle {
+  display: inline-flex;
+  background: var(--color-white);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  padding: 4px;
+  margin: 0 auto var(--spacing-lg);
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comparison-section__toggle-btn {
+  padding: 0.75rem 2rem;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-gray-700);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.comparison-section__toggle-btn--active {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Comparison Cards Grid */
+.comparison-section__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Card with Flip Animation */
+.comparison-card {
+  perspective: 1000px;
+  height: 360px;
+}
+
+.comparison-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.comparison-card--flipped .comparison-card__inner {
+  transform: rotateY(180deg);
+}
+
+.comparison-card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-gray-100);
+  display: flex;
+  flex-direction: column;
+}
+
+.comparison-card__face--back {
+  transform: rotateY(180deg);
+}
+
+.comparison-card__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.comparison-card__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.3;
+}
+
+.comparison-card__description {
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-700);
+  line-height: 1.6;
+  margin-bottom: auto;
+  flex: 1;
+}
+
+.comparison-card__metric {
+  margin-top: var(--spacing-md);
+  font-weight: 800;
+}
+
+.comparison-card__metric-value {
+  font-size: var(--font-size-3xl);
+  line-height: 1;
+}
+
+.comparison-card__metric-unit {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+/* Bottom Cards */
+.comparison-section__bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.comparison-bottom-card {
+  perspective: 1000px;
+  height: 410px;
+}
+
+.comparison-bottom-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.comparison-bottom-card--flipped .comparison-bottom-card__inner {
+  transform: rotateY(180deg);
+}
+
+.comparison-bottom-card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-gray-200);
+}
+
+.comparison-bottom-card__face--back {
+  transform: rotateY(180deg);
+}
+
+.comparison-bottom-card__title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Cost Breakdown */
+.cost-breakdown__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.cost-breakdown__label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  color: var(--color-gray-700);
+}
+
+.cost-breakdown__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-600);
+}
+
+.cost-breakdown__value {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  color: var(--color-dark);
+  font-family: var(--font-Inter);
+}
+
+.cost-breakdown__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  /* margin-top: var(--spacing-sm); */
+  border-bottom: 1px solid var(--color-gray-300);
+}
+
+.cost-breakdown__total-label {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.cost-breakdown__total-value {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--comparison-red);
+  font-family: var(--font-Inter);
+}
+
+/* Emissions Chart */
+.emissions-chart {
+  height: 320px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.emissions-chart__grid {
+  display: flex;
+  width: 100%;
+  gap: var(--spacing-md);
+}
+
+.emissions-chart__y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-600);
+  padding-bottom: 24px;
+}
+
+.emissions-chart__bars {
+  display: flex;
+  flex: 1;
+  gap: var(--spacing-sm);
+  align-items: flex-end;
+}
+
+.emissions-chart__bar-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.emissions-chart__bars-container {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+}
+
+.emissions-chart__bar {
+  flex: 1;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  transition: height 0.6s ease;
+}
+
+.emissions-chart__bar--electric {
+  background: var(--comparison-green);
+}
+
+.emissions-chart__bar--ice {
+  background: var(--comparison-red);
+}
+
+.emissions-chart__label {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-600);
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .comparison-section__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .comparison-card {
+    height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .comparison-section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .comparison-section__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .comparison-section__toggle-btn {
+    padding: 0.625rem 1.5rem;
+    font-size: var(--font-size-sm);
+  }
+
+  .comparison-section__cards {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .comparison-card {
+    height: 300px;
+  }
+
+  .comparison-section__bottom {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .comparison-bottom-card {
+    height: auto;
+    min-height: 380px;
+  }
+
+  .emissions-chart {
+    height: 280px;
+  }
+
+  .emissions-chart__bars-container {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .comparison-section__header {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .comparison-section__toggle {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .comparison-section__toggle-btn {
+    flex: 1;
+    padding: 0.625rem 1rem;
+  }
+
+  .comparison-card__face {
+    padding: var(--spacing-lg);
+  }
+
+  .comparison-bottom-card__face {
+    padding: var(--spacing-lg);
+  }
+
+  .cost-breakdown__row {
+    padding: var(--spacing-sm) 0;
+  }
+
+  .emissions-chart__y-axis {
+    font-size: 10px;
+  }
+
+  .emissions-chart__bars {
+    gap: 4px;
+  }
+}
