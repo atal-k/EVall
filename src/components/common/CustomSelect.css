@@ -1,0 +1,185 @@
+/* // FILE: src/components/common/CustomSelect.css
+// ============================================================================ */
+
+.custom-select {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Trigger Button */
+.custom-select__trigger {
+  width: 100%;
+  padding: 0.75rem var(--spacing-md);
+  font-size: var(--font-size-base);
+  font-family: var(--font-primary);
+  color: var(--color-dark);
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  transition: all var(--transition-base);
+  user-select: none;
+}
+
+.custom-select__trigger:hover:not(.custom-select--disabled .custom-select__trigger) {
+  border-color: var(--color-gray-600);
+}
+
+.custom-select__trigger:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 179, 0, 0.1);
+}
+
+.custom-select__trigger--open {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 179, 0, 0.1);
+}
+
+.custom-select__trigger--error {
+  border-color: #dc2626;
+}
+
+.custom-select__trigger--error:focus,
+.custom-select__trigger--error.custom-select__trigger--open {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.custom-select--disabled .custom-select__trigger {
+  background-color: var(--color-gray-100);
+  cursor: not-allowed;
+}
+
+/* Value and Placeholder */
+.custom-select__value {
+  color: var(--color-dark);
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select__placeholder {
+  color: var(--color-gray-500);
+  flex: 1;
+  text-align: left;
+}
+
+/* Arrow Icon */
+.custom-select__arrow {
+  color: var(--color-gray-600);
+  transition: transform var(--transition-base);
+  flex-shrink: 0;
+}
+
+.custom-select__arrow--open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.custom-select__dropdown {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  max-height: 270px;
+  overflow-y: auto;
+  z-index: 1000;
+  animation: slideIn 0.2s ease;
+}
+
+.custom-select__dropdown--bottom {
+  top: calc(100% + 4px);
+}
+
+.custom-select__dropdown--top {
+  bottom: calc(100% + 4px);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dropdown Options */
+.custom-select__option {
+  padding: 0.6rem var(--spacing-md);
+  font-size: var(--font-size-base);
+  font-family: var(--font-primary);
+  color: var(--color-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  transition: all var(--transition-fast);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.custom-select__option:last-child {
+  border-bottom: none;
+}
+
+.custom-select__option:hover {
+  background: var(--color-gray-100);
+}
+
+.custom-select__option--selected {
+  background: rgba(0, 179, 0, 0.08);
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.custom-select__option--selected:hover {
+  background: rgba(0, 179, 0, 0.12);
+}
+
+.custom-select__option svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* Custom Scrollbar */
+.custom-select__dropdown::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-select__dropdown::-webkit-scrollbar-track {
+  background: var(--color-gray-100);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.custom-select__dropdown::-webkit-scrollbar-thumb {
+  background: var(--color-gray-400);
+  border-radius: var(--radius-full);
+}
+
+.custom-select__dropdown::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-500);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .custom-select__dropdown {
+    max-height: 200px;
+  }
+}
