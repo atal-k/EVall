@@ -6,6 +6,7 @@ import Hero from '../components/sections/Hero';
 import Testimonials from '../components/sections/Testimonials'
 import Models from '../components/sections/Models';
 import Comparison from '../components/sections/Comparison';
+import Intelligence from '../components/sections/Intelligence';
 
 const Home = () => {
 
@@ -15,6 +16,7 @@ const Home = () => {
             <main>
               <Hero />
               <Models/>
+              <Intelligence/>
               <Comparison/>
               <Testimonials />
             </main>

@@ -28,6 +28,13 @@
     --comparison-icon-bg-green: #d6fec9;
     --comparison-icon-bg-red: #fee2e2;
     --comparison-icon-bg-orange: #ffedd5;
+
+    /* IntelligenceSection */
+    --intelligence-magenta: #ff00cc;
+    --intelligence-blue: #405FF2;
+    --intelligence-silver: #C0C0C0;
+    --intelligence-green: #75E890;
+    --intelligence-gradient: linear-gradient(135deg, #4564EA 0%, #EA6FE3 100%);
     
     /* Typography */
     --font-primary: "DM Sans", sans-serif;
