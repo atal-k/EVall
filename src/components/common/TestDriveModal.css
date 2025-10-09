@@ -215,7 +215,7 @@
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
-  min-width: 270px;
+  min-width: 255px;
   max-height: 320px;
   overflow-y: auto;
   background: white;
@@ -363,6 +363,9 @@
   .test-drive-modal__row {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+  .test-drive-modal__field {
+    margin-bottom: var(--spacing-sm);
   }
 }
 /* Responsive */

@@ -14,7 +14,7 @@ const TestDriveModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    countryCode: '+91',
+    countryCode: 'IN',
     mobile: '',
     email: '',
     state: '',
@@ -30,7 +30,6 @@ const TestDriveModal = ({ isOpen, onClose }) => {
   const [products, setProducts] = useState([]);
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
   const countryDropdownRef = useRef(null);
-  console.log(countryCodesData.length);
   
 
   // Load states and products on mount
@@ -245,8 +244,8 @@ const TestDriveModal = ({ isOpen, onClose }) => {
     };
   
     // Select country code
-    const handleCountryCodeSelect = (code) => {
-      setFormData(prev => ({ ...prev, countryCode: code }));
+    const handleCountryCodeSelect = (countryCode) => {
+      setFormData(prev => ({ ...prev, countryCode: countryCode }));
       setIsCountryDropdownOpen(false);
     };
 
@@ -264,12 +263,13 @@ const TestDriveModal = ({ isOpen, onClose }) => {
 
     // Get product name for logging
     const selectedProduct = products.find(p => p.id === formData.product);
+    const selectedCountry = countryCodes.find(c => c.code === formData.countryCode);
     
     // Prepare submission data
     const submissionData = {
       firstName: formData.firstName,
       lastName: formData.lastName,
-      mobile: `${formData.countryCode}${formData.mobile}`,
+      mobile: `${selectedCountry?.value || '+91'}-${formData.mobile}`,
       email: formData.email || 'N/A',
       state: formData.state,
       city: formData.city,
@@ -329,12 +329,8 @@ const TestDriveModal = ({ isOpen, onClose }) => {
     label: product.name
   }));
 
-  const countryCodeOptions = countryCodes.map(code => ({
-    value: code.value,
-    label: `${code.value}`
-  }));
-
   if (!isOpen) return null;
+  const selectedCountry = countryCodes.find(c => c.code === formData.countryCode);
 
   return ReactDOM.createPortal(
     <div className="test-drive-modal" onClick={handleBackdropClick}>
@@ -405,10 +401,8 @@ const TestDriveModal = ({ isOpen, onClose }) => {
                     className="test-drive-modal__country-button"
                     onClick={toggleCountryDropdown}
                   >
-                    <span className="test-drive-modal__country-flag">
-                            {countryCodes.find(c => c.value === formData.countryCode)?.flag || '🌐'}
-                          </span>
-                    <span className="test-drive-modal__country-value">{formData.countryCode}</span>
+                <span className="test-drive-modal__country-flag">{selectedCountry?.flag}</span>
+                <span className="test-drive-modal__country-value">{selectedCountry?.value || '+91'}</span>
                     <span className="test-drive-modal__country-arrow">▾</span>
                   </button>
                   
@@ -417,12 +411,12 @@ const TestDriveModal = ({ isOpen, onClose }) => {
                     <div className="test-drive-modal__country-dropdown" ref={countryDropdownRef}>
                     {countryCodes.map((country) => (
                         <button
-                          key={country.value}
+                          key={`${country.value}-${country.flag}`}
                           type="button"
                           className={`test-drive-modal__country-option ${
-                            formData.countryCode === country.value ? 'active' : ''
+                            formData.countryCode === country.code ? 'active' : ''
                           }`}
-                          onClick={() => handleCountryCodeSelect(country.value)}
+                          onClick={() => handleCountryCodeSelect(country.code)}
                         >
                           <span className="test-drive-modal__country-label">{country.label}</span>
                           <span className="test-drive-modal__country-flag">{country.flag}</span>
