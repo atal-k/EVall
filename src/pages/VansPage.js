@@ -4,10 +4,13 @@
 import React, { useState, useMemo } from 'react';
 import FilterSidebar from '../components/sections/FilterSidebar';
 import VanCard from '../components/common/VanCard';
-import { vansData } from '../data/vansData';
+import useVans from '../hooks/useVans';
 import './VansPage.css';
 
 const VansPage = () => {
+  // Fetch vans from API
+  const { vans: apiVans, loading, error } = useVans();
+  
   const [filters, setFilters] = useState({
     categories: ['light-duty'],
     priceRange: [200000, 1200000],
@@ -16,8 +19,6 @@ const VansPage = () => {
     chargingTypes: []
   });
 
-  const [vans, setVans] = useState(vansData);
-
   const handleFilterChange = (filterType, value) => {
     setFilters(prev => ({
       ...prev,
@@ -25,32 +26,25 @@ const VansPage = () => {
     }));
   };
 
+  // Keep your existing handleWishlistToggle for now
   const handleWishlistToggle = (vanId, isWishlisted) => {
-    setVans(prevVans =>
-      prevVans.map(van =>
-        van.id === vanId ? { ...van, isWishlisted } : van
-      )
-    );
+    // We'll implement API call later
+    console.log('Wishlist toggle:', vanId, isWishlisted);
   };
 
   const handleExploreMore = (vanId) => {
     console.log('Explore van:', vanId);
   };
 
-  // Filter vans based on selected filters
+  // Filter vans (same as before, but use apiVans)
   const filteredVans = useMemo(() => {
-    return vans.filter(van => {
-      // Category filter
+    return apiVans.reverse().filter(van => {
       if (filters.categories.length > 0 && !filters.categories.includes(van.category)) {
         return false;
       }
-
-      // Price filter
       if (van.price < filters.priceRange[0] || van.price > filters.priceRange[1]) {
         return false;
       }
-
-      // Range filter
       if (filters.ranges.length > 0) {
         const range = van.specs.range;
         const rangeMatch = filters.ranges.some(r => {
@@ -61,10 +55,8 @@ const VansPage = () => {
         });
         if (!rangeMatch) return false;
       }
-
-      // Payload filter
       if (filters.payloads.length > 0) {
-        const payload = van.specs.payload || 2.5; // Default payload
+        const payload = van.specs.payload || 2.5;
         const payloadMatch = filters.payloads.some(p => {
           if (p === '<1') return payload < 1;
           if (p === '1-5') return payload >= 1 && payload <= 5;
@@ -73,30 +65,55 @@ const VansPage = () => {
         });
         if (!payloadMatch) return false;
       }
-
-      // Charging type filter
       if (filters.chargingTypes.length > 0) {
-        const chargingType = van.chargingType || 'fast'; // Default charging type
+        const chargingType = van.chargingType || 'fast';
         if (!filters.chargingTypes.includes(chargingType)) {
           return false;
         }
       }
-
       return true;
     });
-  }, [vans, filters]);
+  }, [apiVans, filters]);
 
-  // Calculate counts for each category
+  // Calculate counts for categories
   const vanCounts = useMemo(() => {
     return {
-      lightDuty: vans.filter(v => v.category === 'light-duty').length,
-      mediumDuty: vans.filter(v => v.category === 'medium-duty').length,
-      heavyDuty: vans.filter(v => v.category === 'heavy-duty').length
+      lightDuty: apiVans.filter(v => v.category === 'light-duty').length,
+      mediumDuty: apiVans.filter(v => v.category === 'medium-duty').length,
+      heavyDuty: apiVans.filter(v => v.category === 'heavy-duty').length
     };
-  }, [vans]);
+  }, [apiVans]);
+
+  // Loading state
+  if (loading) {
+    return (
+      <div className="vans-page">
+        <div className="container">
+          <div style={{ textAlign: 'center', padding: '100px 20px' }}>
+            <p>Loading vans...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Error state
+  if (error) {
+    return (
+      <div className="vans-page">
+        <div className="container">
+          <div style={{ textAlign: 'center', padding: '100px 20px' }}>
+            <p style={{ color: 'red' }}>Error: {error}</p>
+            <button onClick={() => window.location.reload()}>Retry</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="vans-page">
+      {/* Rest of your JSX stays the same */}
       <div className="container">
         <h1 className="vans-page__title">Explore All Models</h1>
         

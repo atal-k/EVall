@@ -2,50 +2,38 @@
 // FILE: src/pages/VanDetail.js
 // ============================================================================
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getVanById } from '../data/vansData';
+import useVan from '../hooks/useVan';
 import ImageZoomer from '../components/common/ImageZoomer';
 import './VanDetail.css';
 
 const VanDetail = () => {
-  const { id } = useParams();
+  const { id } = useParams(); // Get ID from URL
+  const { van, loading, error } = useVan(id);
   const navigate = useNavigate();
-  const [van, setVan] = useState(null);
   const [activeTab, setActiveTab] = useState('overview');
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  // const [isWishlisted, setIsWishlisted] = useState(false);
 
-  useEffect(() => {
-    const vanData = getVanById(parseInt(id));
-    setVan(vanData);
-    setSelectedImageIndex(0);
-    if (vanData) {
-      // setIsWishlisted(vanData.isWishlisted || false);
-    }
-  }, [id]);
-
-  // const handleWishlistToggle = () => {
-  //   setIsWishlisted(!isWishlisted);
-  //   // Add logic to update wishlist in parent state/context if needed
-  // };
-
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat('en-IN').format(price);
-  };
-
-  if (!van) {
-    console.log(van)
+  if (loading) {
     return (
-      <div className="van-detail__loading">
-        <div className="container">
-          <p>Loading van details...</p>
-        </div>
+      <div style={{ textAlign: 'center', padding: '100px 20px' }}>
+        <p>Loading van details...</p>
       </div>
     );
   }
 
-  console.log(van)
+  if (error || !van) {
+    return (
+      <div style={{ textAlign: 'center', padding: '100px 20px' }}>
+        <p style={{ color: 'red' }}>Error: {error || 'Van not found'}</p>
+        <button onClick={() => window.history.back()}>Go Back</button>
+      </div>
+    );
+  }
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat('en-IN').format(price);
+  };
   return (
     <div className="van-detail">
       <div className="container">
