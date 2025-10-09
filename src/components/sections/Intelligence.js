@@ -23,9 +23,8 @@ const Intelligence = () => {
       content: [
         'The smart dashboard provides real-time insights on battery, range, and energy consumption for efficient driving.',
         'It tracks vehicle health, predictive maintenance, and safety alerts to ensure uptime and safety.',
-        'With customizable widgets and fleet connectivity, it makes EV operations smarter, safer, and more productive.'
       ],
-      position: 'top-right'
+      position: 'top-left'
     },
     {
       id: 'connectivity',

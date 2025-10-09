@@ -2,21 +2,24 @@
 // FILE: src/components/sections/Models.js
 // ============================================================================
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import VanCard from '../common/VanCard';
-import { vansData, categories } from '../../data/vansData';
+import useVans from '../../hooks/useVans';
 import './Models.css';
+
+const categories = [
+  { id: 'light-duty', label: 'Light Duty Trucks' },
+  { id: 'medium-duty', label: 'Medium-Duty Trucks' },
+  { id: 'heavy-duty', label: 'Heavy-Duty Trucks' }
+];
 
 const Models = () => {
   const [activeCategory, setActiveCategory] = useState('light-duty');
-  const [vans, setVans] = useState(vansData);
+  const { vans, loading, error } = useVans();
 
   const handleWishlistToggle = (vanId, isWishlisted) => {
-    setVans(prevVans =>
-      prevVans.map(van =>
-        van.id === vanId ? { ...van, isWishlisted } : van
-      )
-    );
+    // We'll implement API call later
+    console.log('Wishlist toggle:', vanId, isWishlisted);
   };
 
   const handleExploreMore = (vanId) => {
@@ -24,7 +27,55 @@ const Models = () => {
     // Navigate to detail page or show modal
   };
 
-  const filteredVans = vans.filter(van => van.category === activeCategory).slice(0, 4);
+  // Filter vans by active category and limit to 4
+  const filteredVans = useMemo(() => {
+    return vans
+      .reverse()
+      .filter(van => van.category === activeCategory)
+      .slice(0, 4);
+  }, [vans, activeCategory]);
+
+// Loading state with skeleton cards
+if (loading) {
+  return (
+    <section className="models">
+      <div className="container">
+        <h2 className="models__title">Explore Our Models</h2>
+        <div className="models__tabs">
+          {categories.map(category => (
+            <button key={category.id} className="models__tab" disabled>
+              {category.label}
+            </button>
+          ))}
+        </div>
+        <div className="models__grid">
+          {[1, 2, 3, 4].map(i => (
+            <div key={i} className="van-card" style={{ opacity: 0.5 }}>
+              <div style={{ height: '200px', background: '#f0f0f0' }} />
+              <div style={{ padding: '20px' }}>
+                <div style={{ height: '20px', background: '#f0f0f0', marginBottom: '10px' }} />
+                <div style={{ height: '15px', background: '#f0f0f0', width: '70%' }} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+  // Error state
+  if (error) {
+    return (
+      <section className="models">
+        <div className="container">
+          <div style={{ textAlign: 'center', padding: '60px 20px' }}>
+            <p style={{ color: 'red' }}>Failed to load models. Please try again.</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="models-section">

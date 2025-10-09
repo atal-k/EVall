@@ -193,6 +193,11 @@
 
 
 /* Card Positions */
+.intelligence-glass-card--top-left {
+    top: var(--spacing-lg);
+    left: var(--spacing-sm);
+    transition: all 0.4s ease-in-out;
+  }
 .intelligence-glass-card--top-right {
     top: var(--spacing-xl);
     right: var(--spacing-xl);
