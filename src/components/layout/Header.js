@@ -1,6 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-// Header Component
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import Button from '../common/Button';
 import './Header.css';
@@ -8,6 +6,8 @@ import Logo from "../common/Logo";
 
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
+    const [lastScrollY, setLastScrollY] = useState(0);
     
     const navLinks = [
       ['Home', '/'],
@@ -18,8 +18,29 @@ const Header = () => {
       ['Contact Us']
     ];
     
+    // ADD THIS useEffect
+    useEffect(() => {
+      const handleScroll = () => {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          // Scrolling down & past threshold
+          setIsHidden(true);
+        } else if (currentScrollY < lastScrollY) {
+          // Scrolling up
+          setIsHidden(false);
+        }
+        
+        setLastScrollY(currentScrollY);
+      };
+      
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, [lastScrollY]);
+    
     return (
-      <header className="header">
+      <header className={`header ${isHidden ? 'header--hidden' : ''}`}>
         <div className="header__container">
         <a href="/" className="header__logo-link">
         <Logo size="medium"/>

@@ -10,7 +10,13 @@
     -webkit-backdrop-filter: blur(10px); /* for Safari */
     z-index: 1000;
     box-shadow: var(--shadow-sm);
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
   }
+
+  .header--hidden {
+    transform: translateY(-100%);
+}
   
   .header__container {
     display: flex;
