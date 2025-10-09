@@ -77,7 +77,7 @@ const Intelligence = () => {
       content: [
         'AI-assisted driving uses artificial intelligence and machine learning algorithms to help drivers operate vehicles more safely and efficiently. It combines sensor data, cameras, radar, and GPS to analyze road conditions, detect obstacles, and assist with driving tasks.'
       ],
-      position: 'top-center'
+      position: 'bottom-right'
     }
   ];
 
