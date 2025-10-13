@@ -24,7 +24,7 @@ const VanCard = ({ van, onBookmarkToggle, onExploreMore }) => {
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-IN').format(price);
   };
-  const imageSrc = `/images/${van.images[0]}`;
+  const imageSrc = van.images[0];
 
 
   return (

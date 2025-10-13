@@ -38,7 +38,7 @@ const VansPage = () => {
 
   // Filter vans (same as before, but use apiVans)
   const filteredVans = useMemo(() => {
-    return apiVans.reverse().filter(van => {
+    return apiVans.filter(van => {
       if (filters.categories.length > 0 && !filters.categories.includes(van.category)) {
         return false;
       }

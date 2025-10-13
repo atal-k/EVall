@@ -58,7 +58,7 @@ const VanDetail = () => {
           <div className="van-detail__gallery">
             <div className="van-detail__main-image">
               <ImageZoomer
-                src={`/images/${van.images?.[selectedImageIndex] || van.images[0]}`}
+                src={van.images?.[selectedImageIndex] || van.images[0]}
                 alt={`${van.name} - image ${selectedImageIndex + 1}`}
                 zoomFactor={2.5}
                 selectorSize={140}
@@ -76,7 +76,7 @@ const VanDetail = () => {
                     onTouchStart={() => setSelectedImageIndex(idx)}
                     aria-label={`Select image ${idx + 1}`}
                   >
-                    <img src={`/images/${imgName}`} alt={`Thumbnail ${idx + 1}`} />
+                    <img src={imgName} alt={`Thumbnail ${idx + 1}`} />
                   </button>
                 ))}
               </div>

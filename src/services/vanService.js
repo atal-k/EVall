@@ -1,12 +1,19 @@
 import api from './api';
 
+const CLOUDINARY_BASE_URL = 'https://res.cloudinary.com/dak7ws0xx/image/upload/v1760352909/vans';
+
+// Helper function to map image paths to full Cloudinary URLs
+const mapImagesToCloudinary = (images = []) => {
+  return images.map(img => `${CLOUDINARY_BASE_URL}/${img}`);
+};
+
 // Transform backend response to match your frontend format
 const transformVan = (van) => ({
   id: van.id,
   name: van.name,
   category: van.category,
   tagline: van.tagline,
-  images: van.images,
+  images: mapImagesToCloudinary(van.images),
   status: van.status,
   badge: van.badge,
   badgeColor: van.badge_color,

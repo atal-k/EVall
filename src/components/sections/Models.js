@@ -30,7 +30,6 @@ const Models = () => {
   // Filter vans by active category and limit to 4
   const filteredVans = useMemo(() => {
     return vans
-      .reverse()
       .filter(van => van.category === activeCategory)
       .slice(0, 4);
   }, [vans, activeCategory]);
