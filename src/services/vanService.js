@@ -1,6 +1,6 @@
 import api from './api';
 
-const CLOUDINARY_BASE_URL = 'https://res.cloudinary.com/dak7ws0xx/image/upload/v1760352909/vans';
+const CLOUDINARY_BASE_URL = 'https://res.cloudinary.com/dak7ws0xx/image/upload/v1760352909';
 
 // Helper function to map image paths to full Cloudinary URLs
 const mapImagesToCloudinary = (images = []) => {
