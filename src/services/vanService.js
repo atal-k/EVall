@@ -1,10 +1,10 @@
 import api from './api';
 
-const CLOUDINARY_BASE_URL = 'https://res.cloudinary.com/dak7ws0xx/image/upload/v1760352909';
+const REACT_APP_CLOUDINARY_BASE_URL = process.env.REACT_APP_CLOUDINARY_BASE_URL
 
 // Helper function to map image paths to full Cloudinary URLs
 const mapImagesToCloudinary = (images = []) => {
-  return images.map(img => `${CLOUDINARY_BASE_URL}/${img}`);
+  return images.map(img => `${REACT_APP_CLOUDINARY_BASE_URL}/${img}`);
 };
 
 // Transform backend response to match your frontend format
