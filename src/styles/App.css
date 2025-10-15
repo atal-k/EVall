@@ -14,6 +14,7 @@
     --color-gray-200: #e5e5e5;
     --color-gray-300: #d4d4d4;
     --color-gray-600: #666666;
+    --color-gray-650: #5a6370;
     --color-gray-700: #4a4a4a;
     --color-gray-800: #333333;
     --color-gray-900: #222222;
@@ -39,6 +40,8 @@
     --intelligence-silver: #C0C0C0;
     --intelligence-green: #75E890;
     --intelligence-gradient: linear-gradient(135deg, #4564EA 0%, #EA6FE3 100%);
+
+    --color-quote-blue: #1A2F4B;
     
     /* Typography */
     --font-primary: "DM Sans", sans-serif;
