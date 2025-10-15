@@ -7,6 +7,7 @@ import Testimonials from '../components/sections/Testimonials'
 import Models from '../components/sections/Models';
 import Comparison from '../components/sections/Comparison';
 import Intelligence from '../components/sections/Intelligence';
+import Features from '../components/sections/Features';
 
 const Home = () => {
 
@@ -17,6 +18,7 @@ const Home = () => {
               <Hero />
               <Models/>
               <Intelligence/>
+              <Features/>
               <Comparison/>
               <Testimonials />
             </main>
