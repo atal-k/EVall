@@ -1,0 +1,295 @@
+/* Video Player Styles */
+.video-player {
+  position: relative;
+  width: 100%;
+  max-width: 780px;
+  aspect-ratio: 3 / 2;
+  background: var(--color-black);
+  border-radius: var(--radius-xmd);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  margin: 0 auto;
+}
+
+.video-player__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+/* Gradient Overlay - Left to Right */
+.video-player__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(8,9,13,0) 0%, rgba(8,9,13,0.6) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Center Play Button */
+/* Size: 120x120 - Adjust width/height below to change size */
+.video-player__center-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;  /* Change this for size adjustment */
+  height: 120px; /* Change this for size adjustment */
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform var(--transition-base);
+  z-index: 3;
+  padding: 0;
+}
+
+.video-player__center-play:hover {
+  transform: translate(-50%, -50%) scale(1.025);
+}
+
+.video-player__center-play svg {
+  width: 120px;  /* Icon size - adjust proportionally */
+  height: 120px; /* Icon size - adjust proportionally */
+  color: var(--color-white);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+/* Controls Footer */
+.video-player__controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.6) 20%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-sm);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  z-index: 2;
+  color: var(--color-white);
+}
+
+.video-player__controls--visible {
+  opacity: 1;
+}
+
+/* Video Title */
+.video-player__title {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.01em;
+}
+
+/* Progress Bar Container */
+.video-player__progress-container {
+  margin-bottom: var(--spacing-md);
+  cursor: pointer;
+  padding: var(--spacing-xs) 0;
+}
+
+.video-player__progress-bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+  transition: height var(--transition-fast);
+}
+
+.video-player__progress-container:hover .video-player__progress-bar {
+  height: 6px;
+}
+
+.video-player__progress-fill {
+  height: 100%;
+  background: var(--color-white);
+  border-radius: var(--radius-full);
+  transition: width 0.1s linear;
+  position: relative;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.video-player__progress-fill::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  background: var(--color-white);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.video-player__progress-container:hover .video-player__progress-fill::after {
+  opacity: 1;
+}
+
+/* Control Buttons */
+.video-player__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+.video-player__buttons-left,
+.video-player__buttons-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.video-player__btn {
+  background: transparent;
+  border: none;
+  color: var(--color-white);
+  padding: var(--spacing-xs);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.video-player__btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.video-player__btn:active {
+  transform: scale(0.95);
+}
+
+.video-player__btn svg {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+}
+
+/* Time Display */
+.video-player__time {
+  font-family: var(--font-Inter);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-white);
+  white-space: nowrap;
+  margin: 0 var(--spacing-xs);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.02em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .video-player {
+    max-width: 100%;
+    border-radius: var(--radius-lg);
+  }
+
+  .video-player__center-play {
+    width: 100px;  /* Smaller on mobile */
+    height: 100px;
+  }
+
+  .video-player__center-play svg {
+    width: 56px;
+    height: 56px;
+  }
+
+  .video-player__title {
+    font-size: var(--font-size-base);
+  }
+
+  .video-player__time {
+    font-size: var(--font-size-xs);
+    margin: 0 4px;
+  }
+
+  .video-player__btn {
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+  }
+
+  .video-player__btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .video-player__controls {
+    padding: var(--spacing-md) var(--spacing-sm) var(--spacing-xs);
+  }
+
+  .video-player__buttons {
+    gap: var(--spacing-xs);
+  }
+
+  .video-player__buttons-left,
+  .video-player__buttons-right {
+    gap: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-player__center-play {
+    width: 80px;  /* Even smaller on small mobile */
+    height: 80px;
+  }
+
+  .video-player__center-play svg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .video-player__title {
+    font-size: var(--font-size-sm);
+  }
+
+  .video-player__btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .video-player__btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .video-player__buttons-left,
+  .video-player__buttons-right {
+    gap: 2px;
+  }
+}
+
+/* Fullscreen adjustments */
+.video-player:fullscreen {
+  max-width: 100%;
+  border-radius: 0;
+}
+
+.video-player:fullscreen .video-player__controls {
+  opacity: 1;
+}
