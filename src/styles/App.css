@@ -1,4 +1,4 @@
-/* // STYLES & CSS VARIABLES
+/* // Global STYLES & CSS VARIABLES APP.css
 // ============================================================================ */
 :root {
     /* Color Palette */
@@ -6,11 +6,14 @@
     --color-primary-dark: #008f00;
     --color-secondary: #1a8fb8;
     --color-dark: #1a1a1a;
+    --color-light-green-fill: #effeef;
     --color-light-green: #29D023;
     --color-dark-green: #3D923A;
     --color-dark-green2: #043702;
     --color-dark-green3: #113510;
-    --color-gray-100: #f5f5f5;
+    --color-gray-outline: #BBBBBB;
+    --color-gray-outline2: #737C8C;
+    --color-gray-100: #f3f3f3;
     --color-gray-200: #e5e5e5;
     --color-gray-300: #d4d4d4;
     --color-gray-600: #666666;
@@ -42,6 +45,7 @@
     --intelligence-gradient: linear-gradient(135deg, #4564EA 0%, #EA6FE3 100%);
 
     --color-quote-blue: #1A2F4B;
+    --color-td: rgba(0, 0, 0, 0.87);
     
     /* Typography */
     --font-primary: "DM Sans", sans-serif;
@@ -50,6 +54,7 @@
     --font-Poppins: "Poppins", sans-serif;
     --font-Inter: "Inter", sans-serif;
     --font-size-xs: 0.75rem;
+    --font-size-sm2: 0.85rem;
     --font-size-sm: 0.9rem;
     --font-size-base: 1rem;
     --font-size-lg: 1.125rem;
@@ -71,6 +76,21 @@
     --spacing-2xl: 4rem;
     --spacing-3xl: 6rem;
 
+        /* Compact form spacing */
+    --form-spacing-xs: 0.35rem;
+    --form-spacing-sm: 0.6rem;
+    --form-spacing-md: 1rem;
+    --form-spacing-lg: 1.25rem;
+    --form-padding: 0.6rem 0.75rem;
+
+    /* Color form */
+    --color-form-title: #1D1B20;
+    --color-form-label: #5C6370;
+
+    /* result chart color */
+    --color-eve-green: #34D100;
+    --color-ice-blue: #2D76F0;
+
     /* Feauture card padding */
     --feature-card-padding: 30px 20px 20px;
     
@@ -88,15 +108,19 @@
     --shadow-md: 4px 4px 4px rgba(0, 0, 0, 0.25);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+
+    --border-outline: 1px solid var(--color-gray-outline);
     
     /* Border Radius */
     --radius-sm: 4px;
+    --radius-xsm: 6px;
     --radius-md: 8px;
     --radius-xmd: 10px;
     --radius-lg: 12px;
     --radius-xl: 16px;
     --radius-xxl: 20px;
     --radius-full: 9999px;
+
   }
   
   * {
@@ -115,6 +139,18 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
+  /* Container constraint - add to existing App.css */
+  .container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  /* Currency sign */
+  .currency-sign {
+    font-family: var(--font-Inter);
+  }
+  
   img {
     max-width: 100%;
     height: auto;
@@ -131,6 +167,33 @@
     text-decoration: none;
     color: inherit;
   }
+/* Modern Minimal Scrollbar */
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-gray-100);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-400);
+  border-radius: 4px;
+  transition: background var(--transition-base);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-600);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gray-400) var(--color-gray-100);
+}
     
   /* ========== RESPONSIVE DESIGN ========== */
   @media (min-width: 768px) {

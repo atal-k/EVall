@@ -8,6 +8,8 @@ import Models from '../components/sections/Models';
 import Comparison from '../components/sections/Comparison';
 import Intelligence from '../components/sections/Intelligence';
 import Features from '../components/sections/Features';
+import TCOCalculator from '../components/sections/TCO/TCOCalculator';
+import About from '../components/sections/About';
 
 const Home = () => {
 
@@ -16,9 +18,11 @@ const Home = () => {
           <div className="app">
             <main>
               <Hero />
+              <About/>
               <Models/>
               <Intelligence/>
               <Features/>
+              <TCOCalculator/>
               <Comparison/>
               <Testimonials />
             </main>
