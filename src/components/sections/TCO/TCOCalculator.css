@@ -1,0 +1,36 @@
+/* // FILE: src/components/sections/TCO/TCO_Calculator.css
+// ============================================================================ */
+
+.tco-calculator {
+  padding: var(--spacing-xl) 0;
+  background: var(--color-white);
+  min-height: 100vh;
+}
+
+.tco-calculator__title {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.tco-calculator__subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.tco-calculator__layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;  /* SWAP: Form 60%, Results 40% */
+  gap: 0.75rem;
+  align-items: start;
+  /* overflow: hidden;  */
+}
+
+@media (max-width: 1200px) {
+  .tco-calculator__layout {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
