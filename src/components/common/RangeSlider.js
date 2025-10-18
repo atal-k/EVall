@@ -61,7 +61,8 @@ const RangeSlider = ({ min, max, step = 1000, value, onChange }) => {
       />
       
       <div className="range-slider__values">
-        <span className="range-slider__value">Price : <span className="range-slider__value-price"><span className="range-slider__value-price-currency">₹</span>{formatPrice(minValue)} - <span className="range-slider__value-price-currency">₹</span>{formatPrice(maxValue)}</span></span>
+        {/* <span className="range-slider__value">Price : <span className="range-slider__value-price"><span className="range-slider__value-price-currency">₹</span>{formatPrice(minValue)} - <span className="range-slider__value-price-currency">₹</span>{formatPrice(maxValue)}</span></span> */}
+        <span className="range-slider__value">Percent: <span className="range-slider__value-price">{Number(value[1])}%</span></span>
       </div>
     </div>
   );
