@@ -1,0 +1,180 @@
+/* // FILE: src/components/sections/CTASection.css
+// ============================================================================ */
+
+/* In CTASection.css - REPLACE these sections */
+
+.cta-section {
+    padding: var(--spacing-2xl) 0;
+    background: var(--color-gray-100);
+    position: relative;
+    /* padding-top: 120px;  */
+  }
+
+  .spacer{
+    height: 30px;
+  }
+  
+  .cta-section__container {
+    background: var(--color-dark-green4);
+    border-radius: var(--radius-xxl);
+    overflow: visible; /* CHANGED from hidden to visible */
+    display: grid;
+    grid-template-columns: 55% 45%;
+    align-items: center;
+    min-height: 300px;
+    position: relative;
+  }
+  
+  .cta-section__image-wrapper {
+    position: absolute; /* CHANGED from relative */
+    left: 30px;
+    top: -150px; /* ADDED - pulls image up beyond container */
+    height: calc(100% + 180px); /* Extends beyond container */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 10;
+  }
+  
+  .cta-section__image {
+    /* width: 120%; */
+    height: auto;
+    object-fit: contain;
+    /* transform: translateX(-5%); */
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+  }
+  
+  .cta-section__content {
+    padding: var(--spacing-lg) var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    color: var(--color-white);
+    grid-column: 2; /* Ensures content stays in right column */
+  }
+
+.cta-section__title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.9px;
+  color: var(--color-white);
+  margin: 0;
+}
+
+.cta-section__subtitle {
+  font-size: var(--font-size-xl);
+  line-height: 1.6;
+  padding-right: 30px;
+  color: var(--color-gray-100);
+  margin: 0;
+}
+
+.cta-section__tagline {
+  font-size: var(--font-size-xl);
+  line-height: 1.4;
+  color: var(--color-gray-100);
+  margin: 0;
+}
+
+.cta-section__buttons {
+  display: flex;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+  margin-top: var(--spacing-md);
+}
+
+.cta-section__buttons .btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    width: 200px;
+
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .cta-section__container {
+    grid-template-columns: 45% 55%;
+    min-height: 400px;
+  }
+
+  .cta-section__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .cta-section__subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .cta-section__tagline {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .cta-section__container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    border-radius: 16px;
+  }
+
+  .cta-section__image-wrapper {
+    height: 300px;
+    justify-content: center;
+    padding: var(--spacing-xl) 0;
+  }
+
+  .cta-section__image {
+    width: 100%;
+    transform: translateX(0);
+  }
+
+  .cta-section__content {
+    padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-2xl);
+    text-align: center;
+    align-items: center;
+  }
+
+  .cta-section__title {
+    font-size: var(--font-size-xl);
+  }
+
+  .cta-section__subtitle {
+    font-size: var(--font-size-sm);
+  }
+
+  .cta-section__tagline {
+    font-size: var(--font-size-base);
+  }
+
+  .cta-section__buttons {
+    width: 100%;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .cta-section__buttons button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-section__container {
+    border-radius: 12px;
+  }
+
+  .cta-section__image-wrapper {
+    height: 250px;
+  }
+
+  .cta-section__content {
+    padding: var(--spacing-lg) var(--spacing-md) var(--spacing-xl);
+  }
+
+  .cta-section__title {
+    font-size: var(--font-size-lg);
+  }
+}

@@ -10,6 +10,7 @@ import Intelligence from '../components/sections/Intelligence';
 import Features from '../components/sections/Features';
 import TCOCalculator from '../components/sections/TCO/TCOCalculator';
 import About from '../components/sections/About';
+import Callout from '../components/sections/Callout';
 
 const Home = () => {
 
@@ -25,6 +26,7 @@ const Home = () => {
               <TCOCalculator/>
               <Comparison/>
               <Testimonials />
+              <Callout/>
             </main>
           </div>
         </>
