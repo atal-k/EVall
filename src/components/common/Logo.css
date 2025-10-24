@@ -32,7 +32,7 @@
   .logo__text {
     font-family: var(--font-RobotoFlex);
     font-weight: 700;
-    color: var(--color-white);
+    color: var(--color-black);
     white-space: nowrap;
   }
   
