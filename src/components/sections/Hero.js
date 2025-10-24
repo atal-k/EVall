@@ -21,16 +21,18 @@ const Hero = () => {
         
         <div className="hero__content">
           <h1 className="hero__title">
-            Reliable Performance Meets Zero Emissions
+            Presenting <span className="hero__title-highlight">EV Uday</span>
+            <p className="hero__title-slogan">Har Load Ka Saathi,</p>
+            <p className="hero__title-slogan">Har Mile Ka Vaadi</p>
           </h1>
           <p className="hero__subtitle">
-            Designed for commercial success — efficient, durable, and sustainable.
+            India's Most Trusted Electric Commercial Vehicle
           </p>
           
           <div className="hero__cta">
             <Button variant="primary" className="cta" onClick={() => setShowTestDrive(true)}>
               <span className="cta_icon" aria-hidden="true"><img src="./icons/handle.svg" alt="handle icon" /></span>
-              <span className="cta__label">Test Drive</span>
+              <span className="cta__label">Drive EV Uday Now</span>
             </Button>
           </div>
           <TestDriveModal 
@@ -52,6 +54,11 @@ const Hero = () => {
             </div>
           </div>
         </div>
+        {/* ADD THIS NEW PRICE TAG SECTION */}
+        <div className="hero__price-tag">
+            <div className="hero__price-label">Starting From</div>
+            <div className="hero__price-value"><span className="currency-sign">₹</span>15.5<span className="hero__price-asterisk">*</span> <span className="hero__price-unit">lacs</span></div>
+          </div>
       </section>
     );
   };

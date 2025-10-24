@@ -8,6 +8,7 @@
     --color-dark: #1a1a1a;
     --color-light-green-fill: #effeef;
     --color-light-green: #29D023;
+    --color-light-green2: #42F705;
     --color-dark-green: #3D923A;
     --color-dark-green2: #043702;
     --color-dark-green3: #113510;
@@ -55,6 +56,7 @@
     --font-RobotoFlex: "Roboto Flex", sans-serif;
     --font-Poppins: "Poppins", sans-serif;
     --font-Inter: "Inter", sans-serif;
+    --font-Candal: "Candal", sans-serif;
     --font-size-xs: 0.75rem;
     --font-size-sm2: 0.85rem;
     --font-size-sm: 0.9rem;
@@ -66,6 +68,7 @@
     --font-size-2-5xl: 1.75rem;
     --font-size-3xl: 2rem;
     --font-size-4xl: 2.5rem;
+    --font-size-4-5xl: 3rem;
     --font-size-5xl: 3.5rem;
     
     /* Spacing */
@@ -211,9 +214,6 @@
       display: inline-flex;
     }
     
-    .hero__title {
-      font-size: var(--font-size-5xl);
-    }
     
     .testimonials__grid {
       grid-template-columns: repeat(2, 1fr);

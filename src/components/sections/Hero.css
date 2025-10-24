@@ -44,7 +44,7 @@
 }
 
 .hero__title {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-4-5xl);
   font-weight: 600;
   line-height: 1.2;
   margin-top: var(--spacing-3xl);
@@ -54,9 +54,18 @@
   text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
 }
 
+.hero__title-highlight {
+  font-family: var(--font-Candal);
+  color: var(--color-light-green2);
+}
+
+.hero__title-slogan {
+  font-size: var(--font-size-4xl);
+}
+
 .hero__subtitle {
   font-size: var(--font-size-2xl);
-  font-weight: 550;
+  /* font-weight: 300; */
   line-height: 1.6;
   margin-bottom: var(--spacing-md);
   max-width: 680px;
@@ -86,6 +95,10 @@
   display: inline-block;
   transition: transform 0.5s ease, margin 0.5s ease;
   margin-right: 8px;
+}
+
+.cta__label {
+  font-weight: 500;
 }
 
 .hero__cta:hover .cta_icon {
@@ -127,4 +140,75 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   opacity: 0.9;
+}
+
+/* Price Tag */
+.hero__price-tag {
+  position: absolute;
+  bottom: var(--spacing-xl);
+  right: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 4%, #ffffff 100%);
+  color: var(--color-black);
+  padding: var(--spacing-sm);
+  padding-left: var(--spacing-2xl);
+  text-align: left;
+  z-index: 3;
+}
+
+.hero__price-label {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.hero__price-value {
+  font-size: var(--font-size-2-5xl);
+  font-weight: 700;
+  color: var(--color-black);
+  letter-spacing: 0.9px;
+  line-height: 1;
+}
+
+.hero__price-asterisk {
+  font-size: var(--font-size-xl);
+  vertical-align: super;
+  margin-left: 2px;
+}
+
+.hero__price-unit {
+  /* font-weight: 600; */
+}
+
+/* Responsive adjustments for price tag */
+@media (max-width: 768px) {
+  .hero__price-tag {
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .hero__price-label {
+    font-size: var(--font-size-xs);
+  }
+
+  .hero__price-value {
+    font-size: var(--font-size-xl);
+  }
+
+  .hero__price-asterisk,
+  .hero__price-unit {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__price-tag {
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .hero__price-value {
+    font-size: var(--font-size-lg);
+  }
 }
