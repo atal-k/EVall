@@ -11,6 +11,7 @@ import Features from '../components/sections/Features';
 import TCOCalculator from '../components/sections/TCO/TCOCalculator';
 import About from '../components/sections/About';
 import Callout from '../components/sections/Callout';
+import CoreValues from '../components/sections/CoreValues';
 
 const Home = () => {
 
@@ -22,6 +23,7 @@ const Home = () => {
               <About/>
               <Models/>
               <Intelligence/>
+              <CoreValues/>
               <Features/>
               <TCOCalculator/>
               <Comparison/>
