@@ -21,7 +21,7 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="footer__brand">
             <div className="footer__logo">
-              <Logo size="large" className="logo--light" />
+              <Logo size="large" className="logo--light" color="white" />
             </div>
               <p className="footer__tagline">
                 Leading the electric revolution with innovative, sustainable, and high-performance 

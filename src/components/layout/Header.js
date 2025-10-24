@@ -11,10 +11,11 @@ const Header = () => {
     
     const navLinks = [
       ['Home', '/'],
-      ['Models', '/vans'],
-      ['Fleet Solutions'],
-      ['Charging/Infrastructure'],
-      ['Service'],
+      ['About Us', '/vans'],
+      ['Network'],
+      ['Products'],
+      ['Tech & Innovation'],
+      ['Resources'],
       ['Contact Us']
     ];
     
