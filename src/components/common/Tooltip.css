@@ -1,0 +1,102 @@
+/* // FILE: /src/components/common/Tooltip.css
+// ============================================================================ */
+
+.tooltip {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  background: var(--color-gray-spot); 
+  border: 2px solid rgba(41, 11, 211, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 
+              0 0 20px rgba(41, 11, 211, 0.2);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--transition-base);
+  animation: none;
+}
+
+.tooltip:hover {
+  transform: scale(1.1); /* Slightly less scale */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4),
+              0 0 30px rgba(41, 11, 211, 0.4);
+  animation: none;
+}
+
+.tooltip:active {
+  transform: scale(0.95);
+}
+
+.tooltip--active {
+  background: var(--color-gray-spot); /* Keep same background even when active */
+  border-color: var(--color-blue-spot);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4),
+              0 0 40px rgba(41, 11, 211, 0.6);
+  animation: none;
+}
+
+.tooltip__spot {
+  font-family: var(--font-Poppins);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--color-blue-spot); 
+  background: var(--color-white);
+  outline: 4px solid var(--color-blue-spot);
+  position: relative;
+  z-index: 2;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  /* font-size: 0; */
+}
+
+.tooltip__pulse {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-blue-spot);
+  animation: pulseRing 2.5s ease-out infinite;
+  opacity: 0;
+}
+
+.tooltip--active .tooltip__pulse {
+  border-color: var(--color-primary);
+}
+
+/* @keyframes tooltipPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+} */
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.6); 
+    opacity: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .tooltip {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .tooltip__number {
+    font-size: var(--font-size-xl);
+  }
+}
