@@ -10,6 +10,7 @@ import VansPage from './pages/VansPage';
 import './styles/App.css';
 import './styles/utils.css'
 import VanDetail from './pages/VanDetail';
+import VehicleShowcase from './pages/VehicleShowcase';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/vans" element={<VansPage />} />
             <Route path="/vans/:id" element={<VanDetail />} />
+            <Route path="/vehicle-showcase" element={<VehicleShowcase/>}/>
           </Routes>
         </main>
         <Footer />

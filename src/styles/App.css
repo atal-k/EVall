@@ -49,6 +49,11 @@
 
     --color-quote-blue: #1A2F4B;
     --color-td: rgba(0, 0, 0, 0.87);
+
+    /* Vehicle Showcase */
+    --color-active: #5C6370;
+    --color-gray-spot: rgba(56, 56, 56, 0.4);
+    --color-blue-spot: #290BD3;
     
     /* Typography */
     --font-primary: "DM Sans", sans-serif;
@@ -70,16 +75,22 @@
     --font-size-4xl: 2.5rem;
     --font-size-4-5xl: 3rem;
     --font-size-5xl: 3.5rem;
+    --font-size-6xl: 4rem;
+    --font-size-7xl: 4.5rem;
+
     
     /* Spacing */
     --spacing-xxs: 0.25rem;
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
+    --spacing-smd: 1.25rem;
     --spacing-md: 1.5rem;
     --spacing-lg: 2rem;
     --spacing-xl: 3rem;
     --spacing-2xl: 4rem;
     --spacing-3xl: 6rem;
+    --spacing-4xl: 8rem;
+    --spacing-5xl: 10rem;
 
         /* Compact form spacing */
     --form-spacing-xs: 0.35rem;

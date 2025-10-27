@@ -13,7 +13,7 @@ const Header = () => {
       ['Home', '/'],
       ['About Us', '/vans'],
       ['Network'],
-      ['Products'],
+      ['Products', '/vehicle-showcase'],
       ['Tech & Innovation'],
       ['Resources'],
       ['Contact Us']
