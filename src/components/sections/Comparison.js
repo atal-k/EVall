@@ -42,7 +42,8 @@ const Comparison = () => {
         icon: cardIcons[0],
         title: 'Higher Operating Costs',
         description: 'Fuel and service costs are higher with frequent refueling. Efficiency depends on traffic and driving style.',
-        metric: '₹0.12',
+        metric: '0.12',
+        currency: '₹',
         unit: '/mile',
       },
       {
@@ -58,7 +59,8 @@ const Comparison = () => {
         icon: cardIcons[2],
         title: 'Complex Maintenance',
         description: 'Complex engine with many moving parts. Regular oil changes and servicing needed.',
-        metric: '₹1200',
+        metric: '1200',
+        currency: '₹',
         unit: '/year',
       },
       {
@@ -76,7 +78,8 @@ const Comparison = () => {
         icon: cardIcons[0],
         title: 'Lower Operating Costs',
         description: 'Fuel and service costs are higher with frequent refueling. Efficiency depends on traffic and driving style.',
-        metric: '₹0.04',
+        metric: '0.04',
+        currency: '₹',
         unit: '/mile',
       },
       {
@@ -92,7 +95,8 @@ const Comparison = () => {
         icon: cardIcons[2],
         title: 'Minimal Maintenance',
         description: 'Few moving parts and no engine oil. Mostly tyres, brakes, and battery checks.',
-        metric: '₹400',
+        metric: '400',
+        currency: '₹',
         unit: '/year',
       },
       {
@@ -208,13 +212,16 @@ const Comparison = () => {
                   <p className="comparison-card__description">
                     {comparisonData.ice[index].description}
                   </p>
-                  <div className="comparison-card__metric" style={{ color: cardColors.colors[index] }}>
+                  <div className="comparison-card__metric" style={{ color: cardColors.colors[index] }}> 
                     <span className="comparison-card__metric-value">
+                      {comparisonData.ice[index].currency && (
+                        <span className="currency-sign">{comparisonData.ice[index].currency}</span>
+                      )}
                       {comparisonData.ice[index].metric}
-                    </span>
-                    <span className="comparison-card__metric-unit">
-                      {comparisonData.ice[index].unit}
-                    </span>
+                    </span> 
+                    <span className="comparison-card__metric-unit"> 
+                      {comparisonData.ice[index].unit} 
+                    </span> 
                   </div>
                 </div>
 
@@ -229,6 +236,9 @@ const Comparison = () => {
                   </p>
                   <div className="comparison-card__metric" style={{ color: cardColors.colors[index] }}>
                     <span className="comparison-card__metric-value">
+                      {comparisonData.electric[index].currency && (
+                        <span className="currency-sign">{comparisonData.electric[index].currency}</span>
+                      )}
                       {comparisonData.electric[index].metric}
                     </span>
                     <span className="comparison-card__metric-unit">
