@@ -1,0 +1,70 @@
+/* // FILE: /src/components/sections/ExteriorFeatures.css
+// ============================================================================ */
+
+.exterior-features {
+  position: relative;
+  padding: var(--spacing-3xl) 0 0;
+  background-color: var(--color-white);
+}
+
+.exterior-features__container {
+  padding: 0 var(--spacing-md);
+}
+
+.exterior-features__header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.exterior-features__title {
+  font-family: var(--font-Poppins);
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+}
+
+.exterior-features__subtitle {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-600);
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.exterior-features__image-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.exterior-features__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-lg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .exterior-features {
+    padding: var(--spacing-xl) 0 0;
+  }
+
+  .exterior-features__title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .exterior-features__subtitle {
+    font-size: var(--font-size-base);
+    padding: 0 var(--spacing-md);
+  }
+
+  .exterior-features__image-container {
+    height: 70vh;
+  }
+}
