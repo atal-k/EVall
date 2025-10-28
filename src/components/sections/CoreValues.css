@@ -20,7 +20,6 @@
 /* Top Section - Full Width Image */
 .core-values-section__image-wrapper {
     width: 75%;
-    margin-bottom: var(--spacing-xl);
 }
 
 .core-values-section__image {

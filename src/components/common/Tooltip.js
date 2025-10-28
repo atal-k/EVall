@@ -18,7 +18,7 @@ const Tooltip = ({ position, index, isActive, onClick }) => {
       onClick={onClick}
       aria-label={`View feature ${index}`}
     >
-      <span className="tooltip__spot">{index}</span>
+      <span className="tooltip__spot"></span>
       <span className="tooltip__pulse"></span>
     </button>
   );

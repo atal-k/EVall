@@ -86,8 +86,10 @@
     --spacing-smd: 1.25rem;
     --spacing-md: 1.5rem;
     --spacing-lg: 2rem;
+    --spacing-xlg: 2.5rem;
     --spacing-xl: 3rem;
     --spacing-2xl: 4rem;
+    --spacing-2-5xl: 5rem;
     --spacing-3xl: 6rem;
     --spacing-4xl: 8rem;
     --spacing-5xl: 10rem;
@@ -106,6 +108,17 @@
     /* result chart color */
     --color-eve-green: #34D100;
     --color-ice-blue: #2D76F0;
+
+    /* Alternate layout */
+    --color-alternate-heading: #0d3d2d;
+    --color-alternate-text: #4a5568;
+
+    /* TabView */
+    --color-tab-active: #00b300;
+    --color-tab-inactive: #777575;
+    --color-tab-hover: #444242;
+    --color-tab-heading: #113510;
+    --color-tab-text: #5a6370;
 
     /* Feauture card padding */
     --feature-card-padding: 30px 20px 20px;
@@ -135,7 +148,7 @@
     --radius-lg: 12px;
     --radius-xl: 16px;
     --radius-xxl: 20px;
-    --radius-full: 9999px;
+    --radius-full: 999px;
 
   }
   

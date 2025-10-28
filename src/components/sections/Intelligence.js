@@ -19,7 +19,7 @@ const Intelligence = () => {
         </svg>
       ),
       iconColor: '#ff00cc',
-      image: '/images/intelligence-tab1.webp',
+      image: '/images/intelligence-tab1.png',
       content: [
         'The smart dashboard provides real-time insights on battery, range, and energy consumption for efficient driving.',
         'It tracks vehicle health, predictive maintenance, and safety alerts to ensure uptime and safety.',
@@ -39,7 +39,7 @@ const Intelligence = () => {
         </svg>
       ),
       iconColor: '#405FF2',
-      image: '/images/intelligence-tab2.webp',
+      image: '/images/intelligence-tab2.png',
       content: [
         'Connectivity transforms EV commercial vehicles into smart, data-driven machines, allowing real-time monitoring, efficient fleet management, predictive maintenance, and seamless interaction with infrastructure and devices.'
       ],
@@ -57,7 +57,7 @@ const Intelligence = () => {
         </svg>
       ),
       iconColor: '#C0C0C0',
-      image: '/images/intelligence-tab3.webp',
+      image: '/images/intelligence-tab3.png',
       content: [
         'Regenerative braking is a technology in electric vehicles (EVs) that recovers kinetic energy during deceleration and converts it into electrical energy to recharge the battery'
       ],
@@ -72,7 +72,7 @@ const Intelligence = () => {
         </svg>
       ),
       iconColor: '#75E890',
-      image: '/images/intelligence-tab4.webp',
+      image: '/images/intelligence-tab4.png',
       content: [
         'AI-assisted driving uses artificial intelligence and machine learning algorithms to help drivers operate vehicles more safely and efficiently. It combines sensor data, cameras, radar, and GPS to analyze road conditions, detect obstacles, and assist with driving tasks.'
       ],

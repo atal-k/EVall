@@ -21,7 +21,6 @@ const Home = () => {
             <main>
               <Hero />
               <About/>
-              <Models/>
               <Intelligence/>
               <CoreValues/>
               <Features/>

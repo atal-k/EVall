@@ -11,31 +11,31 @@ const Features = () => {
       id: 1,
       title: 'Sports/Economy Mode',
       description: 'Switch seamlessly between Sports mode for powerful acceleration and Economy mode for optimal energy savings — giving you complete control over performance and efficiency depending on your driving needs.',
-      image: '/images/feature1.webp'
+      image: '/images/feature1.png'
     },
     {
       id: 2,
       title: 'AC Cabin',
       description: 'Enjoy a spacious, climate-controlled cabin designed for all-season comfort. The advanced air-conditioning and ventilation system maintains an ideal temperature, keeping drivers cool in the summer and warm in the winter.',
-      image: '/images/feature2.webp'
+      image: '/images/feature2.png'
     },
     {
       id: 3,
       title: 'Electronic Power Steering',
       description: 'Experience effortless maneuvering and enhanced driving comfort with advanced electronic power steering. Designed to minimize driver strain, it offers precise control and smoother handling, whether navigating tight city streets',
-      image: '/images/feature3.webp'
+      image: '/images/feature3.png'
     },
     {
       id: 4,
       title: 'Power Window',
       description: 'Modern convenience with power windows allowing easy and quick operation for enhanced driver comfort  and practicality in all weather conditions.',
-      image: '/images/feature4.webp'
+      image: '/images/feature4.png'
     },
     {
       id: 5,
       title: 'LED DRL',
       description: 'Energy-efficient LED Daytime Running Lights increase visibility and road presence, improving safety by making the vehicle more noticeable during the day.',
-      image: '/images/feature5.webp'
+      image: '/images/feature5.png'
     }
   ];
 

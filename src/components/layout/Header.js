@@ -11,7 +11,7 @@ const Header = () => {
     
     const navLinks = [
       ['Home', '/'],
-      ['About Us', '/vans'],
+      ['About Us', '/about-us'],
       ['Network'],
       ['Products', '/vehicle-showcase'],
       ['Tech & Innovation'],

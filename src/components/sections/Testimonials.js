@@ -11,7 +11,7 @@ const Testimonials = () => {
       name: 'Priya Patel',
       role: 'Head of Operations',
       company: 'Green Freight Services',
-      avatar: 'images/person1.jpg',
+      avatar: 'images/person1.png',
       rating: 5,
       text: 'EVall Uday fits India\'s logistics challenges perfectly. Battery range and fast charging help us keep our schedules, while predictive maintenance reduces unscheduled breakdowns. This has got to be the smoothest way to manage a fleet.'
     },
@@ -20,16 +20,16 @@ const Testimonials = () => {
       name: 'Rajesh Sharma',
       role: 'Fleet Manager',
       company: 'Delhi Logistics',
-      avatar: 'images/person2.jpg',
+      avatar: 'images/person2.png',
       rating: 4,
       text: 'Making the switch to EVall Uday for our fleet has been a very big change. The vehicles are reliable and easy to work with, with their telematics helping me in route optimization and downtime reduction. Operating costwise, we now have revenues going down, so does the displeasure among the operators!'
-    },
+  },
     {
       id: 3,
       name: 'Sanjay Verma',
       role: 'Senior Supervisor',
       company: 'Jagrit Express',
-      avatar: 'images/person3.jpg',
+      avatar: 'images/person3.png',
       rating: 5,
       text: 'Real-time updates on driver performance and maintenance alerts are just a few features that EVall Uday brings to the table. It has made fleet management a breeze, and my team can indeed build consistent performances in even challenging city routes.'
     },
@@ -38,7 +38,7 @@ const Testimonials = () => {
       name: 'Anil Kumar',
       role: 'Executive Owner',
       company: 'Bharat Cargo Movers',
-      avatar: 'images/person4.jpg',
+      avatar: 'images/person4.png',
       rating: 4,
       text: 'I trust EVall Uday 100% for growing my business. The after-sales support is fabulous, the cost efficiency profitable, and basically, this heap puts together all the aspects of fleet management that improve customer sustainability through continued commitment.'
     }
