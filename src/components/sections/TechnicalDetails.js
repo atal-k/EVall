@@ -77,7 +77,7 @@ const TechnicalDetails = () => {
       <div className="technical-details__container container">
         <div className="technical-details__image">
           <img 
-            src="/images/evall-front.png" 
+            src="/images/evall-front.webp" 
             alt="EVall Van Front View" 
           />
         </div>
@@ -111,13 +111,13 @@ const TechnicalDetails = () => {
             onClick={(e) => e.stopPropagation()}
             >
             <button className="modal-close" onClick={closeModal}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" color='#5C6370'>
                 <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
               </svg>
             </button>
 
             <div className="modal-header">
-              <Logo size="medium" />
+              <Logo size="large" />
             </div>
 
             <div className="modal-body">
