@@ -16,7 +16,7 @@ const Header = () => {
       ['Products', '/vehicle-showcase'],
       ['Tech & Innovation'],
       ['Resources'],
-      ['Contact Us']
+      ['Contact Us' , '/contact-us']
     ];
     
     // ADD THIS useEffect

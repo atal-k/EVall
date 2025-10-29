@@ -53,13 +53,13 @@ const Footer = () => {
             <div className="footer__section">
               <h4 className="footer__section-title">Quick Links</h4>
               <div className="footer__links">
-                <a href="#" className="footer__link">Home</a>
-                <a href="#" className="footer__link">About Us</a>
-                <a href="#" className="footer__link">Products</a>
+                <a href="/" className="footer__link">Home</a>
+                <a href="/about-us" className="footer__link">About Us</a>
+                <a href="/vehicle-showcase" className="footer__link">Products</a>
                 <a href="#" className="footer__link">Technology</a>
                 <a href="#" className="footer__link">Services</a>
                 <a href="#" className="footer__link">Resources</a>
-                <a href="#" className="footer__link">Contact</a>
+                <a href="/contact-us" className="footer__link">Contact</a>
               </div>
             </div>
             

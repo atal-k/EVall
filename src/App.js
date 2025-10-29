@@ -12,6 +12,7 @@ import './styles/utils.css'
 import VanDetail from './pages/VanDetail';
 import VehicleShowcase from './pages/VehicleShowcase';
 import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/vans/:id" element={<VanDetail />} />
             <Route path="/vehicle-showcase" element={<VehicleShowcase/>}/>
             <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/contact-us" element={<ContactUs />} />
           </Routes>
         </main>
         <Footer />
