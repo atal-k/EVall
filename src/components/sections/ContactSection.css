@@ -1,0 +1,190 @@
+/* src/components/sections/ContactSection/ContactSection.css */
+
+   .contact-section {
+    width: 100%;
+    background: var(--color-off-white);
+    color: var(--color-text);
+    margin: var(--spacing-xl) auto;
+  }
+  
+  /* Wrapper - replaces generic "container" */
+  .contact-section__wrapper {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 0;
+    align-items: stretch;
+  }
+  
+  /* ============================================================================
+     LEFT PANEL - Green Banner
+     ============================================================================ */
+  
+  .contact-section__left {
+    background: var(--color-green-banner);
+    color: var(--color-white);
+    padding: var(--spacing-sm) var(--spacing-3xl);
+    display: flex;
+    align-items: center;
+  }
+  
+  .contact-section__left-content {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  /* Heading & Description */
+  .contact-section__heading {
+    font-size: var(--font-size-4-5xl);
+    font-weight: 500;
+    margin-bottom: 1rem ;
+    color: var(--color-white);
+    line-height: 1.1;
+  }
+  
+  .contact-section__description {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: var(--font-size-lg);
+    margin-bottom: 2.25rem;
+    max-width: 540px;
+    line-height: 1.5;
+  }
+  
+  .contact-section__subheading {
+    font-size: var(--font-size-2xl);
+    margin-bottom: 1rem;
+    color: var(--color-white);
+    font-weight: 500;
+  }
+  
+  /* ============================================================================
+     INFO BLOCKS - Address, Phone, Email
+     ============================================================================ */
+  
+  .contact-section__info-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 0 0 1.2rem 0;
+  }
+  
+  .contact-section__icon-tile {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: var(--radius-xmd);
+    background: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-green-banner);
+    flex-shrink: 0;
+  }
+  
+  .contact-section__icon-tile svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+  }
+  
+  .contact-section__info-text {
+    color: var(--color-white);
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    padding-top: 0.25rem;
+  }
+  
+  .contact-section__address {
+    margin: 0;
+    max-width: 420px;
+  }
+  
+  .contact-section__contact-line {
+    margin: 0;
+  }
+  
+  /* ============================================================================
+     RIGHT PANEL - White Form Area
+     ============================================================================ */
+  
+  .contact-section__right {
+    background: var(--color-white);
+    padding: var(--spacing-sm) var(--spacing-xl);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  .contact-section__form-wrapper {
+    width: 100%;
+    /* max-width: 560px; */
+  }
+  
+  /* ============================================================================
+     RESPONSIVE DESIGN
+     ============================================================================ */
+  
+  @media (max-width: 900px) {
+    .contact-section__wrapper {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+  
+    .contact-section__left {
+      padding: var(--spacing-sm) var(--spacing-xl);
+    }
+  
+    .contact-section__right {
+      padding: var(--spacing-sm);
+    }
+  
+    .contact-section__heading {
+      font-size: var(--font-size-3xl);
+    }
+  
+    .contact-section__description {
+      font-size: var(--font-size-sm2);
+    }
+  
+    .contact-section__icon-tile {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      min-height: 48px;
+    }
+  
+    .contact-section__form-wrapper {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .contact-section__left {
+      padding: var(--spacing-xl) var(--spacing-lg);
+    }
+  
+    .contact-section__right {
+      padding: var(--spacing-lg);
+    }
+  
+    .contact-section__heading {
+      font-size: var(--font-size-2-5xl);
+    }
+  
+    .contact-section__subheading {
+      font-size: var(--font-size-xl);
+    }
+  
+    .contact-section__icon-tile {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+    }
+  
+    .contact-section__info-text {
+      font-size: var(--font-size-sm2);
+    }
+  }
