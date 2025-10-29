@@ -25,7 +25,7 @@ const TabView = ({ data }) => {
 
         {/* Tab Content */}
         {activeContent && (
-          <div className="tab-view__content">
+          <div key={activeContent.id} className="tab-view__content">
             <div className="tab-view__image-wrapper">
               <img 
                 src={activeContent.img.src} 
