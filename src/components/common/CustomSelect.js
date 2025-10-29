@@ -16,6 +16,8 @@ const CustomSelect = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownPosition, setDropdownPosition] = useState('bottom');
+  const MAX_DROPDOWN_HEIGHT = 270; // must match CSS max-height
+  const [computedMaxHeight, setComputedMaxHeight] = useState(MAX_DROPDOWN_HEIGHT);
   const containerRef = useRef(null);
   const dropdownRef = useRef(null);
 
@@ -55,15 +57,30 @@ const CustomSelect = ({
       const rect = containerRef.current.getBoundingClientRect();
       const spaceBelow = window.innerHeight - rect.bottom;
       const spaceAbove = rect.top;
-      
-      // If not enough space below and more space above, open upward
-      if (spaceBelow < 250 && spaceAbove > spaceBelow) {
-        setDropdownPosition('top');
+
+      // estimate desired dropdown height (you can adjust itemHeight if needed)
+      const ITEM_ESTIMATED_HEIGHT = 40; // px per item (rough)
+      const desired = Math.min(MAX_DROPDOWN_HEIGHT, options.length * ITEM_ESTIMATED_HEIGHT);
+
+      // choose placement by checking if desired fits below; otherwise check above; otherwise choose larger space
+      let choose = 'bottom';
+      if (spaceBelow >= desired) {
+        choose = 'bottom';
+      } else if (spaceAbove >= desired) {
+        choose = 'top';
       } else {
-        setDropdownPosition('bottom');
+        choose = (spaceBelow >= spaceAbove) ? 'bottom' : 'top';
       }
+
+      // compute final clamped maxHeight leaving small margin (8px)
+      const computedMax = choose === 'bottom'
+        ? Math.max(48, Math.min(MAX_DROPDOWN_HEIGHT, spaceBelow - 8))
+        : Math.max(48, Math.min(MAX_DROPDOWN_HEIGHT, spaceAbove - 8));
+
+      setDropdownPosition(choose);
+      setComputedMaxHeight(computedMax);
     }
-  }, [isOpen]);
+  }, [isOpen, options.length]);
 
     // Scroll to selected option when dropdown opens
     useEffect(() => {
@@ -125,12 +142,13 @@ const CustomSelect = ({
         </svg>
       </div>
 
-      {isOpen && (
-        <div 
-          className={`custom-select__dropdown custom-select__dropdown--${dropdownPosition}`}
-          ref={dropdownRef}
-          role="listbox"
-        >
+        {isOpen && (
+          <div
+            className={`custom-select__dropdown custom-select__dropdown--${dropdownPosition} ${dropdownPosition === 'bottom' ? 'animate-down' : 'animate-up'}`}
+            ref={dropdownRef}
+            role="listbox"
+            style={{ maxHeight: `${computedMaxHeight}px` }}
+          >
           {options.map((option) => (
             <div
               key={option.value}
