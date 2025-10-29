@@ -1,0 +1,132 @@
+/* ========================================================================
+   src/components/layout/GreenSolutionBanner.css
+   ======================================================================== */
+
+   .green-solution-banner {
+    padding: var(--spacing-2-5xl) 0;
+    background-color: var(--color-gray-200);
+    overflow: hidden;
+  }
+  
+.green-solution-banner__wrapper {
+    position: relative;
+    background-color: var(--color-green-banner);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    border-radius: var(--radius-xxl);
+    padding: var(--spacing-2xl) var(--spacing-3xl);
+  }
+  
+  .green-solution-banner__image-container {
+    position: absolute;
+    left: var(--spacing-3xl);
+    top: -10%;
+    bottom: -10%;
+    width: 430;
+    z-index: 2;
+  }
+  
+  .green-solution-banner__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-xxl);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .green-solution-banner__content {
+    background-color: transparent;
+    margin-left: 40%;
+    padding: 0;
+    z-index: 1;
+    width: 45%;
+  }
+  
+  .green-solution-banner__title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.9px;
+    line-height: 1.4;
+  }
+  
+  .green-solution-banner__description {
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    color: var(--color-white);
+    line-height: 1.7;
+    letter-spacing: 0.8px;
+    margin: 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .green-solution-banner {
+      padding: var(--spacing-2xl) 0;
+    }
+  
+    .green-solution-banner__content {
+      padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+  
+    .green-solution-banner__title {
+      font-size: var(--font-size-3xl);
+    }
+  
+    .green-solution-banner__description {
+      font-size: var(--font-size-base);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .green-solution-banner {
+      padding: var(--spacing-xl) 0;
+    }
+  
+    .green-solution-banner__wrapper {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  
+    .green-solution-banner__image-container {
+      padding: 0 var(--spacing-md);
+    }
+  
+    .green-solution-banner__image {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  
+    .green-solution-banner__content {
+      margin-left: 0;
+      margin-top: calc(-1 * var(--spacing-lg));
+      padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-xl);
+      border-radius: 0 0 var(--radius-xxl) var(--radius-xxl);
+      padding-top: var(--spacing-2xl);
+    }
+  
+    .green-solution-banner__title {
+      font-size: var(--font-size-2xl);
+    }
+  
+    .green-solution-banner__description {
+      font-size: var(--font-size-sm);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .green-solution-banner__title {
+      font-size: var(--font-size-xl);
+      margin-bottom: var(--spacing-sm);
+    }
+  
+    .green-solution-banner__description {
+      font-size: var(--font-size-sm);
+    }
+  
+    .green-solution-banner__content {
+      padding: var(--spacing-lg) var(--spacing-sm);
+    }
+  }
