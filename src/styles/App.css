@@ -54,6 +54,13 @@
     --color-active: #5C6370;
     --color-gray-spot: rgba(56, 56, 56, 0.4);
     --color-blue-spot: #290BD3;
+
+    /* LeadershipSection colors */
+    --color-blue1: #2147FB;
+    --color-leadership-linkedin: #0a66c2;
+    --color-leadership-facebook: #3b5998;
+
+    --color-green-banner: #066F29;
     
     /* Typography */
     --font-primary: "DM Sans", sans-serif;
@@ -109,16 +116,12 @@
     --color-eve-green: #34D100;
     --color-ice-blue: #2D76F0;
 
-    /* Alternate layout */
-    --color-alternate-heading: #0d3d2d;
-    --color-alternate-text: #4a5568;
-
     /* TabView */
     --color-tab-active: #00b300;
     --color-tab-inactive: #777575;
     --color-tab-hover: #444242;
-    --color-tab-heading: #113510;
-    --color-tab-text: #5a6370;
+    --color-heading: #113510;
+    --color-text: #5C6370;
 
     /* Feauture card padding */
     --feature-card-padding: 30px 20px 20px;

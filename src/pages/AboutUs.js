@@ -7,6 +7,8 @@ import Callout from '../components/sections/Callout';
 import HeaderBanner from '../components/layout/HeaderBanner';
 import AlternateLayout from '../components/common/AlternateLayout';
 import TabView from '../components/common/TabView';
+import LeadershipSection from '../components/sections/LeadershipSection';
+import GreenSolutionBanner from '../components/layout/GreenSolutionBanner';
 const AboutUs = () => {
     const aboutData = [
       {
@@ -123,6 +125,79 @@ const AboutUs = () => {
           ]
         }
       ];
+
+    const leadershipData = {
+        heading: "The Visionaries",
+        subtitle:
+          "Led by a team with extensive expertise in vehicle engineering, battery technology, and automotive manufacturing, our leadership drives innovation with a commitment to quality and green progress.",
+        persons: [
+          {
+            name: "Mr. Naresh Kansal",
+            position: "Director",
+            about:
+              "A seasoned entrepreneur shaping EVall Mobility’s strategic path with a legacy of innovation and sustainable growth in engineering and mobility sectors.",
+            img: {
+              src: "/images/leadership/person1.webp",
+              alt: "Mr. Naresh Kansal - Director",
+            },
+            links: {
+              linkedin: "#",
+              facebook: "#",
+              x: "#",
+              youtube: "#",
+            },
+          },
+          {
+            name: "Mr. Sunny Kansal",
+            position: "Director",
+            about:
+              "Guiding strategic planning and business operations, Sunny drives sustainable innovation and robust corporate governance at EVall Mobility.",
+            img: {
+              src: "/images/leadership/person2.webp",
+              alt: "Mr. Sunny Kansal - Director",
+            },
+            links: {
+              linkedin: "#",
+              facebook: "#",
+              x: "#",
+              youtube: "#",
+            },
+          },
+          {
+            name: "Mr. Ajit Kumar",
+            position: "Vice President",
+            about:
+              "Strategic Sourcing & Operations — Expertly leading supply chain, vendor partnerships, and operational excellence to optimize costs and power EVall’s growing electric vehicle portfolio.",
+            img: {
+              src: "/images/leadership/person3.webp",
+              alt: "Mr. Ajit Kumar - Vice President",
+            },
+            links: {
+              linkedin: "#",
+              facebook: "#",
+              x: "#",
+              youtube: "#",
+            },
+          },
+          {
+            name: "Mr. Manohar Lal",
+            position: "Head – R&D, Electric Vehicles",
+            about:
+              "Spearheading next-gen product innovation with deep expertise in powertrain technology and EV system integration, paving the way for cutting-edge commercial vehicles.",
+            img: {
+              src: "/images/leadership/person4.webp",
+              alt: "Mr. Manohar Lal - Head – R&D, Electric Vehicles",
+            },
+            links: {
+              linkedin: "#",
+              facebook: "#",
+              x: "#",
+              youtube: "#",
+            },
+          },
+        ],
+      };
+      
   
     return (
       <div className="about-us-page">
@@ -132,6 +207,8 @@ const AboutUs = () => {
         />
         <AlternateLayout data={aboutData} />
         <TabView data={tabViewData}/>
+        <LeadershipSection data={leadershipData}/>
+        <GreenSolutionBanner/>
         <Callout/>
       </div>
     );
