@@ -1,0 +1,276 @@
+/* ============================================================================
+   FILE: src/components/common/FormFields.css
+   Styles for reusable form field components
+   ============================================================================ */
+
+/* Base Field Container */
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  /* Field Group (for combined fields like State+City) */
+  .form-field__group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  /* Base Input Styles */
+  .form-field__input {
+    width: 100%;
+    padding: 0.75rem var(--spacing-md);
+    font-size: var(--font-size-base);
+    color: var(--color-dark);
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+    font-family: var(--font-primary);
+  }
+  
+  .form-field__input::placeholder {
+    color: var(--color-gray-500);
+  }
+  
+  .form-field__input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 179, 0, 0.1);
+  }
+  
+  .form-field__input:disabled {
+    background-color: var(--color-gray-100);
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  /* Error State */
+  .form-field__input--error {
+    border-color: #dc2626;
+  }
+  
+  .form-field__input--error:focus {
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+  }
+  
+  .form-field__error {
+    font-size: var(--font-size-xs);
+    color: #dc2626;
+    margin-top: -4px;
+  }
+  
+  /* ============================================================================
+     PHONE FIELD WITH COUNTRY CODE
+     ============================================================================ */
+  
+  .form-field__phone-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .form-field__input--with-country {
+    padding-left: 100px;
+  }
+  
+  /* Country Dropdown Wrapper */
+  .form-field__country-dropdown-wrapper {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    bottom: 1px;
+    z-index: 10;
+  }
+  
+  /* Country Code Button */
+  .form-field__country-button {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    height: 100%;
+    padding: 0 8px;
+    background: transparent;
+    border: none;
+    border-right: 1px solid var(--color-gray-300);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-700);
+    transition: background-color var(--transition-base);
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+  }
+  
+  .form-field__country-button:hover:not(:disabled) {
+    background-color: var(--color-gray-100);
+  }
+  
+  .form-field__country-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  .form-field__country-flag {
+    font-size: 18px;
+    line-height: 1;
+  }
+  
+  .form-field__country-code {
+    font-weight: 500;
+    min-width: 30px;
+  }
+  
+  .form-field__country-arrow {
+    font-size: 10px;
+    color: var(--color-gray-500);
+    margin-left: 1px;
+  }
+  
+  /* Country Dropdown Menu */
+  .form-field__country-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    min-width: 255px;
+    max-height: 320px;
+    overflow-y: auto;
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+  }
+  
+  .form-field__country-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+    width: 100%;
+    padding: 10px 12px;
+    background: var(--color-white);
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-700);
+    text-align: left;
+    transition: background-color var(--transition-base);
+  }
+  
+  .form-field__country-option:hover {
+    background-color: var(--color-gray-100);
+  }
+  
+  .form-field__country-option--active {
+    background-color: #eff6ff;
+    color: #2563eb;
+  }
+  
+  .form-field__country-label {
+    flex: 1;
+  }
+  
+  /* Scrollbar for country dropdown */
+  .form-field__country-dropdown::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .form-field__country-dropdown::-webkit-scrollbar-track {
+    background: var(--color-gray-100);
+    border-radius: var(--radius-full);
+  }
+  
+  .form-field__country-dropdown::-webkit-scrollbar-thumb {
+    background: var(--color-gray-400);
+    border-radius: var(--radius-full);
+  }
+  
+  .form-field__country-dropdown::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gray-500);
+  }
+  
+  /* ============================================================================
+     TEXTAREA (MESSAGE FIELD)
+     ============================================================================ */
+  
+  .form-field__textarea {
+    width: 100%;
+    padding: 0.75rem var(--spacing-md);
+    font-size: var(--font-size-base);
+    color: var(--color-dark);
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+    font-family: var(--font-primary);
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .form-field__textarea::placeholder {
+    color: var(--color-gray-500);
+  }
+  
+  .form-field__textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 179, 0, 0.1);
+  }
+  
+  .form-field__textarea:disabled {
+    background-color: var(--color-gray-100);
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  .form-field__textarea--error {
+    border-color: #dc2626;
+  }
+  
+  .form-field__textarea--error:focus {
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+  }
+  
+  /* Textarea Footer (error + char count) */
+  .form-field__textarea-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -4px;
+  }
+  
+  .form-field__char-count {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-500);
+    margin-left: auto;
+  }
+  
+  /* ============================================================================
+     RESPONSIVE STYLES
+     ============================================================================ */
+  
+  @media (max-width: 768px) {
+    .form-field__group {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  
+    .form-field {
+      margin-bottom: var(--spacing-sm);
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .form-field__input--with-country {
+      padding-left: 90px;
+    }
+    
+    .form-field__country-button {
+      padding: 0 6px 0 10px;
+    }
+    
+    .form-field__country-code {
+      min-width: 30px;
+      font-size: 13px;
+    }
+  }
