@@ -1,34 +1,30 @@
-import { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
+// filepath: src/components/layout/Header.jsx
+import { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from 'react-router-dom';
 import Button from '../common/Button';
 import './Header.css';
 import Logo from "../common/Logo";
+import NavDropdown from '../common/NavDropdown';
+import { navMenuData } from '../../data/navMenuData';
 
-const Header = () => {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [isHidden, setIsHidden] = useState(false);
-    const [lastScrollY, setLastScrollY] = useState(0);
+const Header = ({ variant = "white" }) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const location = useLocation();
+  const navRefs = useRef({});
     
-    const navLinks = [
-      ['Home', '/'],
-      ['About Us', '/about-us'],
-      ['Network'],
-      ['Products', '/vehicle-showcase'],
-      ['Tech & Innovation'],
-      ['Resources'],
-      ['Contact Us' , '/contact-us']
-    ];
-    
-    // ADD THIS useEffect
+    // Scroll handling only for glass variant
     useEffect(() => {
+      if (variant !== 'glass') return;
+      
       const handleScroll = () => {
         const currentScrollY = window.scrollY;
         
         if (currentScrollY > lastScrollY && currentScrollY > 100) {
-          // Scrolling down & past threshold
           setIsHidden(true);
         } else if (currentScrollY < lastScrollY) {
-          // Scrolling up
           setIsHidden(false);
         }
         
@@ -38,26 +34,67 @@ const Header = () => {
       window.addEventListener('scroll', handleScroll, { passive: true });
       
       return () => window.removeEventListener('scroll', handleScroll);
-    }, [lastScrollY]);
+    }, [lastScrollY, variant]);
+    // Close dropdown on route change
+    useEffect(() => {
+      setActiveDropdown(null);
+    }, [location.pathname]);
+    
+    // Check if nav link is active
+    const isActiveLink = (path) => {
+      if (path === '#') return false;
+      if (path === '/') return location.pathname === '/';
+      return location.pathname.startsWith(path);
+    };
+    
+    // Handle nav click
+    const handleNavClick = (e, navItem) => {
+      if (navItem.hasDropdown) {
+        e.preventDefault();
+        setActiveDropdown(activeDropdown === navItem.id ? null : navItem.id);
+      } else {
+        setActiveDropdown(null);
+      }
+    };
+    
+    // Close dropdown
+    const handleCloseDropdown = () => {
+      setActiveDropdown(null);
+    };
     
     return (
-      <header className={`header ${isHidden ? 'header--hidden' : ''}`}>
+      <header className={`header header--${variant} ${isHidden ? 'header--hidden' : ''}`}>
         <div className="header__container">
-        <a href="/" className="header__logo-link">
-        <Logo size="medium"/>
-      </a>
-          
-        <nav className="header__nav">
-        {navLinks.map(([label, path], index) => (
-          <Link
-            key={index}
-            to={path || '#'}
-            className="header__nav-link"
-          >
-            {label}
+          <Link to="/" className="header__logo-link">
+            <Logo size="medium"/>
           </Link>
-        ))}
-      </nav>
+          
+          <nav className="header__nav">
+            {navMenuData.map((navItem) => (
+              <div 
+                key={navItem.id}
+                className="header__nav-item"
+                ref={(el) => (navRefs.current[navItem.id] = el)}
+              >
+                <Link
+                  to={navItem.path || '#'}
+                  className={`header__nav-link ${isActiveLink(navItem.path) ? 'header__nav-link--active' : ''} ${activeDropdown === navItem.id ? 'header__nav-link--dropdown-open' : ''}`}
+                  onClick={(e) => handleNavClick(e, navItem)}
+                >
+                  {navItem.label}
+                </Link>
+                
+                {navItem.hasDropdown && activeDropdown === navItem.id && (
+                  <NavDropdown
+                    menuData={navItem.menu}
+                    isOpen={activeDropdown === navItem.id}
+                    onClose={handleCloseDropdown}
+                    triggerRef={navRefs.current[navItem.id]}
+                  />
+                )}
+              </div>
+            ))}
+          </nav>
           
           <div className="header__actions">
             <Button variant="white" size="small">Find a Dealer</Button>
@@ -72,6 +109,6 @@ const Header = () => {
         </div>
       </header>
     );
-  };
-  
+};
+
 export default Header;
