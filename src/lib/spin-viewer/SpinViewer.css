@@ -1,0 +1,38 @@
+/* src/lib/spin-viewer/SpinViewer.css */
+/* Minimal styling for the spin viewer */
+
+.spinviewer {
+    position: relative;
+    user-select: none;
+    touch-action: pan-y; /* allow vertical scrolling on mobile */
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .spinviewer img {
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none; /* we manage pointer events on the wrapper */
+    image-rendering: -webkit-optimize-contrast; /* optional: crisper images */
+  }
+  
+  .spinviewer .controls {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    display: flex;
+    gap: 6px;
+  }
+  
+  .spinviewer .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+  
