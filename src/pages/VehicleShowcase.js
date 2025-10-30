@@ -8,6 +8,7 @@ import Callout from '../components/sections/Callout';
 import FeatureSection from '../components/sections/FeatureSection';
 import FeaturesCarousel from '../components/sections/FeaturesCarousel';
 import ShowcaseBanner from '../components/sections/ShowcaseBanner';
+import EVShowcase from '../components/sections/EVShowcase';
 
 const VehicleShowcase = () => {
   const exteriorFeaturesData = {
@@ -75,10 +76,41 @@ const VehicleShowcase = () => {
       }
     ]
   };
+  // Handler functions for CTA buttons
+  const handleRequestQuote = () => {
+    console.log("Opening quote request form...");
+    // Your logic: open modal, navigate to form, etc.
+  };
+
+  const handleBookTestDrive = () => {
+    console.log("Opening test drive booking...");
+    // Your logic: open booking system, calendar, etc.
+  };
     return (
         <>
           <div className="app">
             <main>
+              <EVShowcase
+                // Image configuration
+                quantity={19}
+                imagePath="/images/vans"
+                fileName="output_{index}.png"
+                backgroundImage="/images/canvas-background.png"
+                
+                // Content
+                title="T3EV UDAY"
+                tagline="Drive bold. Drive beyond."
+                
+                // Viewer settings
+                autoplay={false}
+                fps={30}
+                preload={4}
+                sensitivity={1.0}
+                
+                // CTA handlers
+                onRequestQuote={handleRequestQuote}
+                onBookTestDrive={handleBookTestDrive}
+              />
               <TechnicalDetails/>
               <FeatureSection data={exteriorFeaturesData} />
               <FeatureSection data={interiorFeaturesData} />
