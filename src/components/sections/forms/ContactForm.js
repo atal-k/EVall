@@ -10,7 +10,6 @@ import {
   CompanyField,
   validateField
 } from '../../common/FormFields';
-import { getProducts } from '../../../data/vansData';
 import Checkbox from '../../common/Checkbox';
 import './ContactForm.css';
 
@@ -149,8 +148,6 @@ const ContactForm = () => {
     }, 1500);
   };
 
-  const products = getProducts ? getProducts() : [];
-
   return (
     <div className="contact-form">
       <h2 className="contact-form__heading">Let's Get Started</h2>
@@ -234,7 +231,6 @@ const ContactForm = () => {
               onChange={handleFieldChange}
               onBlur={handleFieldBlur}
               error={errors.vehicleType}
-              options={products}
               placeholder="Select a Product*"
             />
           </div>

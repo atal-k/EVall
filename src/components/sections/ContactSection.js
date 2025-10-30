@@ -11,7 +11,7 @@ const ContactSection = () => {
         <aside className="contact-section__left">
           <div className="contact-section__left-content">
             <h2 id="contact-heading" className="contact-section__heading">
-              How Can we Help You
+              How can we help you
             </h2>
 
             <p className="contact-section__description">

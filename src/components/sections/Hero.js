@@ -23,7 +23,7 @@ const Hero = () => {
           <h1 className="hero__title">
             Presenting <span className="hero__title-highlight">EV Uday</span>
             <p className="hero__title-slogan">Har Load Ka Saathi,</p>
-            <p className="hero__title-slogan">Har Mile Ka Vaadi</p>
+            <p className="hero__title-slogan">Har Mile Ka Vaada</p>
           </h1>
           <p className="hero__subtitle">
             India's Most Trusted Electric Commercial Vehicle

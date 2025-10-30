@@ -63,7 +63,6 @@ const TechnicalDetails = () => {
       setModalLeft(rect.left);
     }
     setIsModalOpen(true);
-    console.log(modalLeft);
   };
   const closeModal = () => {
     setIsClosing(true);  // ADD THIS

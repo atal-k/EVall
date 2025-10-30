@@ -39,7 +39,7 @@
   top: 0;
   right: 0; 
   transform: translate(100%, -50%);
-  max-width: 600px;
+  max-width: 550px;
   height: 100vh;
   background: var(--color-white);
   /* border-radius: var(--radius-lg) 0 0 var(--radius-lg);  */

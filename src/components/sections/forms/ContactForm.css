@@ -10,11 +10,11 @@
   }
   
   .contact-form__heading {
-    font-size: var(--font-size-xlg);
+    font-size: var(--font-size-xl);
     font-weight: 600;
     margin-bottom: 0.4rem;
     text-align: left;
-    color: var(--color-heading);
+    color: #1e1e1e;
   }
   
   .contact-form__subtitle {
@@ -39,6 +39,20 @@
     display: grid;
     gap: 0.5rem;
   }
+
+  .contact-form__checkboxes .checkbox__input:checked + .checkbox__label .checkbox__box {
+    background: var(--color-gray-850);
+    border-color: var(--color-gray-850);
+  }
+  
+  .contact-form__checkboxes .checkbox__label:hover .checkbox__box {
+    border-color: var(--color-gray-850);
+  }
+
+  .checkbox__input:hover + .checkbox__label .checkbox__text {
+    color: var(--color-gray-850);
+    font-weight: 500;
+  }
   
   .contact-form__error {
     color: var(--comparison-red);
@@ -52,9 +66,9 @@
   }
   
   .contact-form__submit {
-    background-color: var(--color-primary);
+    background-color: var(--color-gray-850);
     color: var(--color-white);
-    padding: 0.6rem 1.5rem; 
+    padding: 0.8rem 4rem; 
     border: none;
     border-radius: var(--radius-xsm);
     cursor: pointer;
@@ -64,7 +78,7 @@
   }
   
   .contact-form__submit:hover:not(:disabled) {
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-dark);
   }
   
   .contact-form__submit:disabled {

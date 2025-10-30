@@ -4,7 +4,7 @@
 .technical-details {
   position: relative;
   background: var(--color-white);
-  margin: var(--spacing-3xl) 0;
+  margin: var(--spacing-xl) 0;
   padding: var(--spacing-xl) 0;
   /* min-height: 100vh; */
   display: flex;

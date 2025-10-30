@@ -8,6 +8,7 @@ import CustomSelect from './CustomSelect';
 import countryCodesData from '../../data/countryCodes.json';
 import citiesData from '../../data/cities.json';
 import './FormFields.css';
+import { getProducts } from '../../data/vansData';
 
 // ============================================================================
 // VALIDATION UTILITIES
@@ -529,12 +530,11 @@ export const ProductSelectField = ({
   value, 
   onChange, 
   error, 
-  products = [],
   placeholder = 'Select a Product*',
   disabled = false,
   className = ''
 }) => {
-  // Prepare options for CustomSelect
+  const products = getProducts();
   const productOptions = products.map(product => ({
     value: product.id,
     label: product.name
