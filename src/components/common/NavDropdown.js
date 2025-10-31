@@ -7,16 +7,27 @@ import { Link } from 'react-router-dom';
 import './NavDropdown.css';
 
 const NavDropdown = ({ menuData, isOpen, onClose, triggerRef }) => {
-    const dropdownRef = useRef(null);
+  const dropdownRef = useRef(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Trigger animation after mount
+  useEffect(() => {
+    if (isOpen) {
+      // Delay to allow CSS transition to work
+      const timer = requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsMounted(true);
+        });
+      });
+      return () => cancelAnimationFrame(timer);
+    } else {
+      setIsMounted(false);
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(e.target) &&
-        triggerRef?.current &&
-        !triggerRef.current.contains(e.target)
-      ) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         onClose();
       }
     };
@@ -28,7 +39,7 @@ const NavDropdown = ({ menuData, isOpen, onClose, triggerRef }) => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isOpen, onClose, triggerRef]);
+  }, [isOpen, onClose]);
 
   if (!menuData) return null;
 
@@ -39,7 +50,7 @@ const NavDropdown = ({ menuData, isOpen, onClose, triggerRef }) => {
   return (
     <div 
       ref={dropdownRef}
-      className={`nav-dropdown ${isOpen ? 'nav-dropdown--open' : ''}`}
+      className={`nav-dropdown ${isMounted ? 'nav-dropdown--open' : ''}`}
     >
       <div className="nav-dropdown__triangle" />
       <div className="nav-dropdown__content">

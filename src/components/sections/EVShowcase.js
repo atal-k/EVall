@@ -43,7 +43,7 @@ const EVShowcase = ({
   autoplay = false,
   fps = 30,
   preload = 4,
-  sensitivity = 0.8
+  sensitivity = 1
 }) => {
   const viewerRef = useRef(null);
 

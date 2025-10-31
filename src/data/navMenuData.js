@@ -120,7 +120,6 @@ export const navMenuData = [
         type: 'mega', // still uses groups for consistent rendering
         groups: [
           {
-            title: 'Contact',
             links: [
               { id: 'feedback', label: 'Feedback Form', path: '/contact/feedback' },
               { id: 'dealer-locator', label: 'Dealer Locator', path: '/contact/dealer-locator' },

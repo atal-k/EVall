@@ -51,15 +51,37 @@ const Header = ({ variant = "white" }) => {
     const handleNavClick = (e, navItem) => {
       if (navItem.hasDropdown) {
         e.preventDefault();
-        setActiveDropdown(activeDropdown === navItem.id ? null : navItem.id);
+        if (activeDropdown === navItem.id) {
+          // Already open, trigger close animation
+          handleCloseDropdown();
+        } else {
+          // Close any open dropdown first, then open new one
+          if (activeDropdown && !activeDropdown.startsWith('closing-')) {
+            setActiveDropdown(null);
+          }
+          setActiveDropdown(navItem.id);
+        }
       } else {
         setActiveDropdown(null);
       }
     };
     
-    // Close dropdown
     const handleCloseDropdown = () => {
-      setActiveDropdown(null);
+      if (!activeDropdown || activeDropdown.startsWith('closing-')) return;
+      
+      const currentDropdown = activeDropdown;
+      setActiveDropdown(`closing-${currentDropdown}`);
+      
+      // Remove after animation completes
+      setTimeout(() => {
+        setActiveDropdown((prev) => {
+          // Only clear if still in closing state
+          if (prev === `closing-${currentDropdown}`) {
+            return null;
+          }
+          return prev;
+        });
+      }, 350);
     };
     
     return (
@@ -84,7 +106,7 @@ const Header = ({ variant = "white" }) => {
                   {navItem.label}
                 </Link>
                 
-                {navItem.hasDropdown && activeDropdown === navItem.id && (
+                {navItem.hasDropdown && (activeDropdown === navItem.id || activeDropdown === `closing-${navItem.id}`) && (
                   <NavDropdown
                     menuData={navItem.menu}
                     isOpen={activeDropdown === navItem.id}
