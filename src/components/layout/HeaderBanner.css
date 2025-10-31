@@ -2,110 +2,243 @@
    src/components/common/HeaderBanner.css
    ======================================================================== */
 
- .header-banner {
-    position: relative;
-    width: 100%;
-    height: 370px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+/* Base Header Banner Styles */
+.header-banner {
+  position: relative;
+  width: 100%;
+  height: 370px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.header-banner__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-banner__content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.header-banner__title {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  color: var(--color-white);
+  margin: 0;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.header-banner__heading {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-5xl);
+  font-weight: 600;
+  color: var(--color-white);
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header-banner__subtitle {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-xl);
+  font-weight: 400;
+  color: var(--color-white);
+  margin: 0;
+  line-height: 1.5;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header-banner__button {
+  align-self: center;
+  margin-top: var(--spacing-sm);
+}
+
+/* ========================================================================
+   Intelligence Variant Styles
+   ======================================================================== */
+
+.header-banner--intelligence-banner {
+  height: 500px;
+}
+
+.header-banner--intelligence-banner .header-banner__overlay {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.45) 80%,
+    transparent 100%
+  );
+  justify-content: flex-start;
+}
+
+.header-banner--intelligence-banner .container {
+  margin-left: 80px;
+  padding-left: max(var(--spacing-xl));
+}
+
+.header-banner--intelligence-banner .header-banner__content {
+  max-width: 700px;
+  text-align: left;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.header-banner--intelligence-banner .header-banner__title {
+  font-size: var(--font-size-sm2);
+  font-weight: 400;
+  color: var(--color-eve-green);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 1;
+}
+
+.header-banner--intelligence-banner .header-banner__heading {
+  font-size: var(--font-size-4-5xl);
+  font-weight: 500;
+  letter-spacing: 1.7px;
+  line-height: 1.25;
+}
+
+.header-banner--intelligence-banner .header-banner__subtitle {
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  max-width: 600px;
+}
+
+.header-banner--intelligence-banner .btn--primary {
+  align-self: flex-start;
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-sm) var(--spacing-xl);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+/* Advance Intelligence banner */
+.adv-intelligence-banner .header-banner__overlay {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.75) 50%,
+    rgba(0, 0, 0, 0.5) 80%,
+    transparent 100%
+  );
+  /* justify-content: center; */
+}
+
+.adv-intelligence-banner .header-banner__subtitle {
+  font-size: var(--font-size-xl);
+  line-height: 1.6;
+  letter-spacing: 0.7px;
+  text-align: justify;
+  max-width: 700px;
+}
+
+/* ========================================================================
+   Responsive Design
+   ======================================================================== */
+
+@media (max-width: 1024px) {
+  .header-banner {
+    height: 350px;
   }
-  
-  .header-banner__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.6) 0%,
-      rgba(0, 0, 0, 0.4) 50%,
-      rgba(0, 0, 0, 0.3) 100%
-    );
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+
+  .header-banner--intelligence-banner {
+    height: 380px;
   }
-  
-  .header-banner__content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    padding: var(--spacing-lg) 0;
-    text-align: center;
-    letter-spacing: 0.5px;
-  }
-  
+
   .header-banner__heading {
-    font-family: var(--font-primary);
-    font-size: var(--font-size-5xl);
-    font-weight: 600;
-    color: var(--color-white);
-    margin-bottom: var(--spacing-sm);
-    line-height: 1.2;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    font-size: var(--font-size-4xl);
   }
-  
+
+  .header-banner--intelligence-banner .header-banner__heading {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-banner {
+    height: 300px;
+  }
+
+  .header-banner--intelligence-banner {
+    height: 350px;
+  }
+
+  .header-banner__heading {
+    font-size: var(--font-size-3xl);
+  }
+
   .header-banner__subtitle {
-    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+  }
+
+  .header-banner--intelligence-banner .container {
+    padding-left: var(--spacing-md);
+  }
+
+  .header-banner--intelligence-banner .header-banner__content {
+    gap: var(--spacing-md);
+  }
+
+  .header-banner--intelligence-banner .header-banner__heading {
     font-size: var(--font-size-2xl);
-    font-weight: 400;
-    color: var(--color-white);
-    margin: 0;
-    line-height: 1.5;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-    max-width: 700px;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 1024px) {
-    .header-banner {
-      height: 350px;
-    }
-  
-    .header-banner__heading {
-      font-size: var(--font-size-5xl);
-    }
-  
-    .header-banner__subtitle {
-      font-size: var(--font-size-xl);
-    }
+}
+
+@media (max-width: 480px) {
+  .header-banner {
+    height: 280px;
   }
-  
-  @media (max-width: 768px) {
-    .header-banner {
-      height: 300px;
-    }
-  
-    .header-banner__heading {
-      font-size: var(--font-size-4xl);
-    }
-  
-    .header-banner__subtitle {
-      font-size: var(--font-size-lg);
-    }
-  
-    .header-banner__content {
-      padding: var(--spacing-md) 0;
-    }
+
+  .header-banner--intelligence-banner {
+    height: 320px;
   }
-  
-  @media (max-width: 480px) {
-    .header-banner {
-      height: 250px;
-    }
-  
-    .header-banner__heading {
-      font-size: var(--font-size-3xl);
-      margin-bottom: var(--spacing-xs);
-    }
-  
-    .header-banner__subtitle {
-      font-size: var(--font-size-base);
-    }
+
+  .header-banner__heading {
+    font-size: var(--font-size-2xl);
   }
+
+  .header-banner__subtitle {
+    font-size: var(--font-size-sm);
+  }
+
+  .header-banner__content {
+    gap: var(--spacing-sm);
+  }
+
+  .header-banner--intelligence-banner .header-banner__title {
+    font-size: var(--font-size-xs);
+  }
+
+  .header-banner--intelligence-banner .header-banner__button {
+    padding: 10px 24px;
+    font-size: var(--font-size-sm);
+  }
+}

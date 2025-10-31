@@ -6,13 +6,12 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
-import VansPage from './pages/VansPage';
 import './styles/App.css';
 import './styles/utils.css'
-import VanDetail from './pages/VanDetail';
-import VehicleShowcase from './pages/VehicleShowcase';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
+import VehicleIntelligence from './pages/tech/VehicleIntelligence';
+import ProductShowcase from './pages/ProductShowcase';
 
 function AppContent() {
   const location = useLocation();
@@ -29,11 +28,11 @@ function AppContent() {
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/vans" element={<VansPage />} />
-          <Route path="/vans/:id" element={<VanDetail />} />
-          <Route path="/vehicle-showcase" element={<VehicleShowcase/>}/>
+          <Route path="/products/product-showcase" element={<ProductShowcase/>}/>
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/tech/vehicle-intelligence" element={<VehicleIntelligence />} />
+
         </Routes>
       </main>
       <Footer />

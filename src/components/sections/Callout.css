@@ -7,7 +7,7 @@
     padding: var(--spacing-2xl) 0;
     background: var(--color-gray-100);
     position: relative;
-    /* padding-top: 120px;  */
+    margin-top: 50px; 
   }
 
   .spacer{

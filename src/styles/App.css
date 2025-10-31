@@ -196,6 +196,9 @@
     border: none;
     font-family: inherit;
   }
+  button:hover {
+    cursor: pointer;
+  }
   
   a {
     text-decoration: none;

@@ -164,6 +164,10 @@
   .ev-showcase__viewer-container .spinviewer:focus-visible {
     outline: none;
   }
+
+  .ev-showcase__viewer-container .spinviewer:hover {
+    cursor: grab;
+  }
   
   
   /* Footer CTA */

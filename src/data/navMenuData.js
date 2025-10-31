@@ -59,7 +59,7 @@ export const navMenuData = [
           {
             title: null,
             links: [
-              { id: 'ecv-overview', label: 'Electric Commercial Vehicles Overview', path: '/vehicle-showcase' },
+              { id: 'ecv-overview', label: 'Electric Commercial Vehicles Overview', path: '/products/product-showcase' },
               { id: 'e-scv', label: 'e-SCV (Detailed Specs, Features, Gallery, Video)', path: '/products/e-scv' },
               { id: 'e-bus', label: 'e-Bus (Detailed Specs, Features, Gallery, Video)', path: '/products/e-bus' },
               { id: 'future-models', label: 'Future Models (Coming Soon)', path: '/products/future-models' },
@@ -72,7 +72,7 @@ export const navMenuData = [
     {
       id: 'tech-innovation',
       label: 'Tech & Innovation',
-      path: '/tech-innovation',
+      path: '/tech/vehicle-intelligence',
       hasDropdown: true,
       menu: {
         type: 'mega',

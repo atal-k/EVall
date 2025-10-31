@@ -165,12 +165,12 @@ import React, {
           }
         },
         next: () => {
-          const delta = reverse ? -1 : 1;
+          const delta = reverse ? 1 : -1;
           showIndex(indexRef.current + delta);
           doPreloadAround(indexRef.current + delta);
         },
         prev: () => {
-          const delta = reverse ? 1 : -1;
+          const delta = reverse ? -1 : 1;
           showIndex(indexRef.current + delta);
           doPreloadAround(indexRef.current + delta);
         },
@@ -288,11 +288,11 @@ import React, {
           return;
         }
         if (e.key === "ArrowRight") {
-          const step = reverse ? -1 : 1;
+          const step = reverse ? 1 : -1;
           showIndex(indexRef.current + step);
           doPreloadAround(indexRef.current + step);
         } else if (e.key === "ArrowLeft") {
-          const step = reverse ? 1 : -1;
+          const step = reverse ? -1 : 1;
           showIndex(indexRef.current + step);
           doPreloadAround(indexRef.current + step);
         } else if (e.key === " ") {

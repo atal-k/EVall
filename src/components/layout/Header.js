@@ -119,7 +119,7 @@ const Header = ({ variant = "white" }) => {
           </nav>
           
           <div className="header__actions">
-            <Button variant="white" size="small">Find a Dealer</Button>
+            <Button variant={location.pathname === '/' ? "white" : "outline"} size="small">Find a Dealer</Button>
             <Button variant="primary" size="small">Explore Models</Button>
             <button 
               className="header__mobile-toggle"
