@@ -1,0 +1,93 @@
+/* // src/components/sections/BenefitSection.js */
+
+
+.benefits {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-off-white);
+  }
+  
+  .benefits__wrap {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    text-align: center;
+  }
+  
+  .benefits__heading {
+    color: var(--color-blue-spot);
+    font-size: var(--font-size-4xl);
+    letter-spacing: 1px;
+    margin: 0 0 var(--spacing-lg);
+    line-height: 1.1;
+  }
+  
+  /* Grid: 4 columns on large, 2 on medium, 1 on small */
+  .benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    align-items: stretch;
+  }
+  
+  /* Card */
+  .benefits__card {
+    background: var(--color-gray-100);
+    border-radius: var(--radius-xmd);
+    padding: var(--spacing-smd);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    min-height: 200px;
+    text-align: left;
+  }
+  
+  .benefits__card:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .benefits__title {
+    font-size: var(--font-size-2xl);
+    color: var(--color-blue1);
+    font-weight: 500;
+    margin: 0 0 var(--spacing-sm);
+    font-weight: 600;
+  }
+  
+  .benefits__desc {
+    color: var(--color-dark);
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  /* Responsive breakpoints */
+  @media (max-width: 1200px) {
+    .benefits__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .benefits__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .benefits__heading {
+      font-size: var(--font-size-2xl);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .benefits__grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .benefits__card {
+      padding: var(--spacing-lg);
+      min-height: auto;
+    }
+  }
+  
